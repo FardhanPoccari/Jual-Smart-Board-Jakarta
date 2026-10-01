@@ -1,0 +1,7 @@
+/* ==========================================================
+   PORTOFOLIO — memakai gaya .grid dan .card dari products.css
+   ========================================================== */
+
+#portfolio-grid .card-body p {
+  flex: 0 0 auto;
+}

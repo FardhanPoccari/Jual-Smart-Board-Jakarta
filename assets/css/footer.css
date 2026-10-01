@@ -1,0 +1,39 @@
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  padding: 56px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 32px;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer li,
+.footer p {
+  color: var(--text-muted);
+  font-size: .93rem;
+  margin-bottom: 6px;
+}
+
+.footer a:hover {
+  color: var(--primary-dark);
+}
+
+.copy {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .85rem;
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}

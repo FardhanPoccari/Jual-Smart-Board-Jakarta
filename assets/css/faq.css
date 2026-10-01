@@ -1,0 +1,47 @@
+/* ==========================================================
+   FAQ (accordion — dikendalikan oleh faq.js)
+   ========================================================== */
+
+.faq {
+  max-width: 760px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+}
+
+.faq-q span {
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+
+.faq-a p {
+  padding: 0 20px 16px;
+  color: var(--text-muted);
+}

@@ -1,0 +1,146 @@
+/* ==========================================================
+   HERO — gambar full lebar (1 gambar atau slideshow otomatis)
+   Daftar gambar diatur di assets/js/hero-slider.js (HERO_IMAGES)
+   ========================================================== */
+
+.hero {
+  position: relative;
+  /* Tinggi hero mengikuti lebar layar supaya gambar (2027 x 776) tampil UTUH tanpa terpotong.
+     Angka 38.3vw = tinggi / lebar gambar. Mau gambar lebih besar/zoom? kecilkan jadi 34vw.
+     Mau gambar lebih kecil/utuh? besarkan jadi 42vw. */
+  margin-top: 70px;   
+  min-height: clamp(560px, 38.3vw, 800px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+/* ---------- Lapisan gambar (satu <div> per gambar, diisi hero-slider.js) ---------- */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* ---------- Gradasi gelap supaya teks putih tetap terbaca ----------
+   Dua lapis: gradasi menyamping (kiri gelap → kanan terang) ditambah
+   "bercak" gelap membulat tepat di belakang kolom teks. Bercak ini yang
+   memastikan teks tetap terbaca di titik manapun foto terang (mis. saat
+   ganti foto lain), bukan cuma menghindari titik terang foto ini saja. */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(65% 95% at 26% 42%, rgba(6, 12, 28, .82), rgba(6, 12, 28, 0) 75%),
+    linear-gradient(100deg, rgba(10, 18, 40, .82) 0%, rgba(10, 18, 40, .58) 40%, rgba(10, 18, 40, .22) 75%, rgba(10, 18, 40, .08) 100%);
+}
+
+/* Container khusus hero: lebih lebar dari container biasa (1140px)
+   supaya teks bergeser ke kiri dan ruang kosong di kiri tidak terlalu besar.
+   Ubah angka 1400px untuk mengatur seberapa jauh ke kiri. */
+.hero .container {
+  width: min(1400px, 92%);
+}
+
+/* ---------- Konten teks ----------
+   Dibungkus <div class="container"> biasa (biar sejajar dengan section
+   lain), dan hero-content di dalamnya adalah kotak biasa lebar 600px
+   yang menempel di sisi kiri container itu — bukan ikut ke-tengah. */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 90px 0 40px;
+}
+
+.hero .badge-light {
+  background: rgba(255, 255, 255, .16);
+  backdrop-filter: blur(2px);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3rem);
+  line-height: 1.2;
+  margin: 18px 0;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .35);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, .9);
+  max-width: 480px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .3);
+}
+
+.hero .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Tombol outline versi putih, khusus di atas foto */
+.btn-outline-white {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .7);
+  color: #fff;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, .12);
+  border-color: #fff;
+}
+
+/* ---------- Titik navigasi slideshow (dibuat otomatis; kosong jika cuma 1 gambar) ---------- */
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  z-index: 2;
+  display: flex;
+  gap: 9px;
+  transform: translateX(-50%);
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .45);
+  transition: .25s;
+}
+
+.hero-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/* ---------- Animasi muncul saat halaman dibuka (kelas "in" ditambah animation.js) ---------- */
+.intro {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.intro.in {
+  opacity: 1;
+  transform: none;
+}

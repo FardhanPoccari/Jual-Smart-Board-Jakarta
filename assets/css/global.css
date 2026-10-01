@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+/* ==========================================================
+   GLOBAL — variabel, reset, layout dasar, tombol, animasi
+   ========================================================== */
+
+/* ---------- Variabel warna & ukuran ---------- */
+:root {
+  --primary: #5B8DEF;
+  --primary-dark: #3F6FD1;
+  --primary-soft: #EAF2FF;
+  --background: #F8FAFC;
+  --white: #fff;
+  --text: #1E293B;
+  --text-muted: #64748B;
+  --border: #E2E8F0;
+  --radius: 14px;
+  --shadow: 0 4px 18px rgba(30, 41, 59, .07);
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: min(1140px, 92%);
+  margin: auto;
+}
+
+.section {
+  padding: 84px 0;
+}
+
+.section.alt {
+  background: var(--background);
+}
+
+.section-head {
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  line-height: 1.25;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-dark);
+}
+
+.btn-outline:hover {
+  background: var(--primary-soft);
+}
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+/* ---------- Animasi scroll (kelas "visible" ditambah oleh animation.js) ---------- */
+.fade-up,
+.fade-left,
+.fade-right,
+.zoom-in {
+  opacity: 0;
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.fade-up    { transform: translateY(28px); }
+.fade-left  { transform: translateX(-28px); }
+.fade-right { transform: translateX(28px); }
+.zoom-in    { transform: scale(.92); }
+
+.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Tombol kembali ke atas ---------- */
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--primary-dark);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-shadow: var(--shadow);
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Aksesibilitas: matikan animasi bila diminta pengguna ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .fade-up,
+  .fade-left,
+  .fade-right,
+  .zoom-in,
+  .intro {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,202 @@
+/* ==========================================================
+   PRODUK, KEUNGGULAN, TENTANG KAMI, DETAIL PRODUK
+   ========================================================== */
+
+/* ---------- Grid & kartu umum ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s, opacity .7s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(63, 111, 209, .16);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  object-fit: contain;
+  object-position: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background: #f7f9fc;
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.card-body h3 {
+  font-size: 1.05rem;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: .93rem;
+  flex: 1;
+}
+
+.card-body .btn {
+  margin-top: 10px;
+  padding: 9px 16px;
+}
+
+/* ---------- Kartu kategori / informasi ---------- */
+.cat-card {
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.cat-card h3 {
+  margin: 8px 0 4px;
+}
+
+.cat-card p {
+  color: var(--text-muted);
+  font-size: .93rem;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+}
+
+/* ---------- Kenapa Memilih Kami ---------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.why-grid .card {
+  padding: 22px;
+  gap: 6px;
+}
+
+.why-grid .card p {
+  color: var(--text-muted);
+}
+
+/* ---------- Tentang Kami ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about img {
+  border-radius: 20px;
+}
+
+.about-text {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.about ul {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.about li::before {
+  content: "✓ ";
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* ---------- Halaman detail produk ---------- */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  padding-top: 110px;
+}
+
+.detail img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  object-position: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: #f7f9fc;
+}
+
+/* Tombol kembali (baris sendiri di atas gambar & spesifikasi) */
+.back-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--primary-dark);
+  font-weight: 600;
+  transition: .2s;
+}
+
+.back-btn:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  transform: translateX(-3px);
+}
+
+.detail .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.spec {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.spec td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec td:first-child {
+  color: var(--text-muted);
+  width: 40%;
+}
+
+.footer-spacer {
+  height: 60px;
+}
