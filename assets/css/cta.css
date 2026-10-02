@@ -1,0 +1,69 @@
+/* ==========================================================
+   CTA — banner biru lebar penuh "Masih Bingung Memilih Smart Board?"
+   ========================================================== */
+
+.cta {
+  padding: 65px 0;
+  background: linear-gradient(135deg, #5B8DEF, #789FF1);
+  color: #fff;
+}
+
+/* Teks di kiri, tombol di kanan */
+.cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Blok teks mengisi sisa ruang di samping tombol */
+.cta-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Label kecil "BUTUH BANTUAN?" dengan garis di depannya */
+.cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.cta-eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: #fff;
+}
+
+.cta h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  margin: 10px 0;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, .85);
+}
+
+/* Tombol putih */
+.btn-white {
+  flex-shrink: 0;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: #fff;
+  border-color: #fff;
+  color: var(--primary-dark);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.btn-white:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary-soft);
+  transform: translateY(-2px);
+}

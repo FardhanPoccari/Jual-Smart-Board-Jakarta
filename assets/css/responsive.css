@@ -1,0 +1,89 @@
+/* ==========================================================
+   RESPONSIVE — tablet & mobile
+   ========================================================== */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 992px) {
+  .grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Navbar: menu jadi dropdown dari hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 66px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 4%;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(30, 41, 59, .08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a.active:not(.nav-cta) {
+    box-shadow: none;
+  }
+
+  .nav-links a.nav-cta {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ---------- Mobile besar ---------- */
+@media (max-width: 768px) {
+  /* Layout 2 kolom jadi 1 kolom */
+  .about,
+  .detail {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero: foto lebih pendek, teks lebih rapat di mobile */
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding: 128px 0 64px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  /* CTA: teks di atas, tombol di bawah */
+  .cta {
+    padding: 55px 0;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Mobile kecil ---------- */
+@media (max-width: 560px) {
+  .grid,
+  .why-grid,
+  .footer-grid,
+  .about ul {
+    grid-template-columns: 1fr;
+  }
+}

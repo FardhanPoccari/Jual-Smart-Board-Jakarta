@@ -1,0 +1,261 @@
+/* =========================
+   BRAND PRODUCT PAGES
+   ========================= */
+.brand-products-page {
+  padding: 0 0 84px;
+}
+
+.brand-hero {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #12395b;
+}
+
+.brand-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--brand-hero-image);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.01);
+}
+
+.brand-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 29, 54, .94) 0%, rgba(5, 29, 54, .78) 42%, rgba(5, 29, 54, .18) 78%, rgba(5, 29, 54, .06) 100%);
+}
+
+.brand-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(1140px, 92%);
+  margin: 0 auto;
+  padding: 96px 0 74px;
+  color: #fff;
+}
+
+.brand-hero-content > * {
+  max-width: 650px;
+}
+
+.brand-hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #d9ebff;
+}
+
+.brand-hero h1 {
+  font-size: clamp(2.3rem, 5vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+
+.brand-hero p {
+  margin-top: 18px;
+  max-width: 630px;
+  color: rgba(255,255,255,.84);
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+
+.brand-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+
+.brand-hero-actions .btn-outline-white {
+  border: 2px solid rgba(255,255,255,.72);
+  color: #fff;
+  background: transparent;
+}
+
+.brand-hero-actions .btn-outline-white:hover {
+  background: rgba(255,255,255,.12);
+}
+
+.brand-series-nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: -30px auto 64px;
+  width: min(1140px, 92%);
+}
+
+.brand-series-btn {
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary-dark);
+  border-radius: 999px;
+  padding: 12px 22px;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(30,41,59,.08);
+  transition: .2s ease;
+}
+
+.brand-series-btn:hover,
+.brand-series-btn.active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.brand-series {
+  display: block;
+  margin-bottom: 70px;
+  scroll-margin-top: 100px;
+}
+
+.brand-series.is-hidden {
+  display: none;
+}
+
+.brand-products-head {
+  margin-bottom: 30px;
+}
+
+.brand-products-head h2,
+.brand-products-head h3 {
+  position: relative;
+  margin: 0 0 10px;
+  padding-left: 16px;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.brand-products-head h2::before,
+.brand-products-head h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .08em;
+  width: 4px;
+  height: 1.05em;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+.brand-products-head p {
+  max-width: 1080px;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.brand-product-grid {
+  align-items: stretch;
+}
+
+.brand-model-card {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-model-image {
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f6f9fc;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-model-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-model-card .card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+.brand-model-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.brand-model-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.brand-model-card .btn {
+  margin-top: 20px;
+}
+
+.brand-products-back {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .brand-hero {
+    min-height: 580px;
+  }
+
+  .brand-hero::after {
+    background: linear-gradient(90deg, rgba(5,29,54,.92), rgba(5,29,54,.66));
+  }
+
+  .brand-hero-content {
+    padding: 118px 0 80px;
+  }
+
+  .brand-series-nav {
+    margin-top: -22px;
+    margin-bottom: 48px;
+  }
+
+  .brand-series-btn {
+    padding: 10px 17px;
+  }
+
+  .brand-model-image {
+    height: 190px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .brand-hero p {
+    font-size: .95rem;
+  }
+
+  .brand-series-nav {
+    gap: 8px;
+  }
+
+  .brand-series-btn {
+    width: 100%;
+  }
+}

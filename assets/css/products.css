@@ -1,0 +1,823 @@
+/* ==========================================================
+   PRODUK, KEUNGGULAN, TENTANG KAMI, DETAIL PRODUK
+   ========================================================== */
+
+
+/* ==========================================================
+   GRID & KARTU UMUM
+   ========================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s, box-shadow .25s, opacity .7s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(63, 111, 209, .16);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  object-fit: contain;
+  object-position: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background: #f7f9fc;
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.card-body h3 {
+  font-size: 1.05rem;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: .93rem;
+  flex: 1;
+}
+
+.card-body .btn {
+  margin-top: 10px;
+  padding: 9px 16px;
+}
+
+
+/* ==========================================================
+   KARTU KATEGORI / INFORMASI
+   ========================================================== */
+
+.cat-card {
+  padding: 24px;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.cat-card h3 {
+  margin: 8px 0 4px;
+}
+
+.cat-card p {
+  color: var(--text-muted);
+  font-size: .93rem;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+}
+
+
+/* ==========================================================
+   KENAPA MEMILIH KAMI
+   ========================================================== */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.why-grid .card {
+  padding: 22px;
+  gap: 6px;
+}
+
+.why-grid .card p {
+  color: var(--text-muted);
+}
+
+
+/* ==========================================================
+   TENTANG KAMI
+   ========================================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about img {
+  border-radius: 20px;
+}
+
+.about-text {
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.about ul {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.about li::before {
+  content: "✓ ";
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   PRODUK UNGGULAN BRAND DI BERANDA
+   ========================================================== */
+
+.featured-products-head {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.featured-products-head h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.4rem);
+  line-height: 1.25;
+}
+
+.featured-products-head p {
+  margin: 10px auto 0;
+  max-width: 660px;
+  color: var(--text-muted);
+}
+
+.brand-product-grid {
+  align-items: stretch;
+}
+
+.brand-product-card {
+  min-height: 100%;
+}
+
+
+/* ==========================================================
+   AREA GAMBAR PRODUK
+   ========================================================== */
+
+.brand-product-image {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f9fc;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.brand-product-image img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+
+/* ==========================================================
+   PENYESUAIAN GAMBAR BRAND
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   HIKVISION
+   Ukuran normal
+   ---------------------------------------------------------- */
+
+.brand-product-card:nth-child(1) .brand-product-image img {
+  width: 88%;
+  height: 88%;
+  transform: scale(1);
+}
+
+
+/* ----------------------------------------------------------
+   ZELT
+   Kembalikan ke ukuran normal.
+   Tidak diperkecil lagi.
+   ---------------------------------------------------------- */
+
+.brand-product-card:nth-child(2) .brand-product-image img {
+  width: 88%;
+  height: 88%;
+  transform: scale(1);
+}
+
+
+/* ----------------------------------------------------------
+   SAMSUNG
+   Diperbesar agar objek terlihat seimbang dengan
+   Hikvision dan Zelt.
+
+   Transform digunakan karena file gambar Samsung
+   memiliki ruang kosong di dalam gambar.
+   ---------------------------------------------------------- */
+
+.brand-product-card:nth-child(3) .brand-product-image img {
+  width: 88%;
+  height: 88%;
+  transform: scale(1.20);
+}
+
+
+/* ==========================================================
+   BODY CARD PRODUK
+   ========================================================== */
+
+.brand-product-card .card-body {
+  min-height: 220px;
+}
+
+
+/* ==========================================================
+   TOMBOL LIHAT SEMUA PRODUK
+   ========================================================== */
+
+.all-products-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+
+/* ==========================================================
+   HALAMAN DETAIL PRODUK
+   ========================================================== */
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: 48px;
+  padding-top: 110px;
+  align-items: start;
+}
+
+
+/* ==========================================================
+   GALERI GAMBAR DETAIL (slide + titik navigasi)
+   ========================================================== */
+
+.gallery {
+  position: sticky;
+  top: 96px;
+  min-width: 0;
+  outline: none;
+}
+
+.gallery:focus-visible .gallery-stage {
+  box-shadow: 0 0 0 3px var(--primary-soft), 0 0 0 4px var(--primary);
+}
+
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #f7f9fc;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .45s ease, visibility 0s linear .45s;
+}
+
+.gallery-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .45s ease, visibility 0s;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   GAMBAR PERTAMA DETAIL PRODUK
+   Dibuat sedikit lebih kecil agar tidak terlalu zoom.
+   Gambar slide berikutnya tetap menggunakan ukuran normal.
+   ========================================================== */
+.gallery-slide:first-child img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  object-position: center;
+
+  /* Naikkan gambar sedikit */
+  transform: translateY(-18px);
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(60, 66, 80, .55);
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background .2s, transform .2s;
+}
+
+.gallery-nav:hover {
+  background: rgba(60, 66, 80, .85);
+}
+
+.gallery-nav:active {
+  transform: translateY(-50%) scale(.94);
+}
+
+.gallery-prev { left: 12px; }
+.gallery-next { right: 12px; }
+
+.gallery-dots {
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.gallery-dot {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.gallery-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #c3cad8;
+  transition: width .25s, background .25s;
+}
+
+.gallery-dot:hover::before {
+  background: #8c97ad;
+}
+
+.gallery-dot.is-active::before {
+  width: 20px;
+  background: var(--primary-dark);
+}
+
+
+/* ==========================================================
+   INFO PRODUK (SISI KANAN)
+   ========================================================== */
+
+.detail-info {
+  min-width: 0;
+}
+
+.detail-info h1 {
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.detail-sub {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+.detail-points {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.detail-points li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.5;
+}
+
+.detail-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+.size-picker {
+  margin-top: 28px;
+}
+
+.size-picker h2 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.size-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  max-width: 460px;
+}
+
+.size-option {
+  display: grid;
+  place-items: center;
+  padding: 14px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 700;
+  text-align: center;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.size-option:hover {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.size-option.is-active {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+  color: var(--primary-dark);
+}
+
+.detail-long {
+  margin-top: 26px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ==========================================================
+   TOMBOL KEMBALI
+   ========================================================== */
+
+.back-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--primary-dark);
+  font-weight: 600;
+  transition: .2s;
+}
+
+.back-btn:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  transform: translateX(-3px);
+}
+
+
+/* ==========================================================
+   ACTION DETAIL PRODUK
+   ========================================================== */
+
+.detail .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================================
+   SPESIFIKASI PRODUK
+   ========================================================== */
+
+.spec {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.spec td {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec td:first-child {
+  color: var(--text-muted);
+  width: 40%;
+}
+
+
+/* ==========================================================
+   FOOTER SPACER
+   ========================================================== */
+
+.footer-spacer {
+  height: 60px;
+}
+
+
+/* ==========================================================
+   KEUNGGULAN — MODEL KIRI & KANAN
+   ========================================================== */
+
+.advantages-section {
+  background: #fff;
+}
+
+.advantages-layout,
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.advantages-intro {
+  position: sticky;
+  top: 110px;
+  max-width: 360px;
+}
+
+.advantages-intro h2,
+.faq-intro h2 {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.16;
+  margin-top: 6px;
+}
+
+.advantages-intro p,
+.faq-intro p {
+  color: var(--text-muted);
+  margin-top: 18px;
+  line-height: 1.8;
+}
+
+.advantages-list {
+  display: grid;
+}
+
+.advantage-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 20px;
+  padding: 0 0 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.advantage-item:last-child {
+  margin-bottom: 0;
+}
+
+.advantage-number {
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 900;
+  color: var(--primary-dark);
+}
+
+.advantage-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 7px;
+}
+
+.advantage-item p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.faq-section .faq {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .advantages-layout,
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .advantages-intro {
+    position: static;
+    max-width: 720px;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  .detail {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 104px;
+    gap: 26px;
+  }
+
+  .gallery {
+    position: static;
+  }
+
+  .gallery-stage {
+    border-radius: 16px;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE KECIL
+   ========================================================== */
+
+@media (max-width: 560px) {
+
+  .gallery-slide {
+    padding: 8px;
+  }
+
+  .gallery-dot {
+    width: 18px;
+  }
+
+  .actions .btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .brand-product-image {
+    height: 210px;
+  }
+
+  .advantage-item {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+  }
+
+  .advantage-number {
+    font-size: 1.45rem;
+  }
+
+  /* Hikvision */
+  .brand-product-card:nth-child(1) .brand-product-image img {
+    width: 88%;
+    height: 88%;
+    transform: scale(1);
+  }
+
+  /* Zelt */
+  .brand-product-card:nth-child(2) .brand-product-image img {
+    width: 88%;
+    height: 88%;
+    transform: scale(1);
+  }
+
+  /* Samsung dibuat lebih besar */
+  .brand-product-card:nth-child(3) .brand-product-image img {
+    width: 88%;
+    height: 88%;
+    transform: scale(1.20);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-slide,
+  .gallery-slide.is-active { transition: none; }
+}
+
+
+/* ==========================================================
+   PERGANTIAN UKURAN YANG HALUS (tanpa reload)
+   ========================================================== */
+
+[data-swap] {
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+[data-swap].is-swapping {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.gallery-enter {
+  animation: galleryIn .35s ease both;
+}
+
+@keyframes galleryIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.size-option {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-swap] { transition: none; }
+  .gallery-enter { animation: none; }
+}
