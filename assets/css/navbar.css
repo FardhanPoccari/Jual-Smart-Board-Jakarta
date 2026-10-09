@@ -9,16 +9,16 @@
   right: 0;
   z-index: 100;
   height: 66px;
-  background: rgba(255, 255, 255, .97);
-  box-shadow: 0 2px 12px rgba(30, 41, 59, .08);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
   backdrop-filter: blur(8px);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 /* Kelas "scrolled" ditambah oleh navbar.js saat halaman di-scroll */
 .navbar.scrolled {
-  background: rgba(255, 255, 255, .97);
-  box-shadow: 0 2px 12px rgba(30, 41, 59, .08);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
 }
 
 .navbar .container {
@@ -32,6 +32,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
   font-weight: 800;
   color: var(--primary-dark);
   font-size: 1.1rem;
@@ -48,23 +49,49 @@
 /* ---------- Menu ---------- */
 .nav-links {
   display: flex;
-  gap: 26px;
+  gap: clamp(28px, 2.5vw, 36px);
   align-items: center;
 }
 
 .nav-links a {
+  position: relative;
   font-weight: 500;
   color: var(--text-muted);
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links > a:not(.nav-cta)::after,
+.nav-dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-links > a:not(.nav-cta):hover,
+.nav-links a.active:not(.nav-cta),
+.nav-dropdown-toggle.active,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle,
+.nav-dropdown:focus-within .nav-dropdown-toggle {
   color: var(--primary-dark);
 }
 
 /* ---------- Menu aktif (ditandai navbar.js saat scroll) ---------- */
-.nav-links a.active:not(.nav-cta) {
-  color: var(--primary-dark);
+.nav-links > a:not(.nav-cta):hover::after,
+.nav-links a.active:not(.nav-cta)::after,
+.nav-dropdown-toggle.active::after,
+.nav-dropdown-toggle:hover::after,
+.nav-dropdown.open .nav-dropdown-toggle::after,
+.nav-dropdown:focus-within .nav-dropdown-toggle::after {
+  transform: scaleX(1);
 }
 
 /* ---------- Tombol "Konsultasi Sekarang" di navbar ---------- */
@@ -76,7 +103,7 @@
 .nav-cta {
   padding: 8px 20px;
   white-space: nowrap;
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.4;
 }
 
@@ -90,7 +117,6 @@
   color: var(--text);
 }
 
-
 /* ---------- Dropdown Produk ---------- */
 .nav-dropdown {
   position: relative;
@@ -100,6 +126,7 @@
 }
 
 .nav-dropdown-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -112,25 +139,22 @@
   padding: 8px 0;
 }
 
-/* Panah: default menghadap ke ATAS */
+/* Chevron CSS agar arah panah tidak bergantung pada karakter font. */
 .nav-dropdown-toggle span {
-  display: inline-block;          /* wajib supaya rotate bekerja */
-  font-size: .8rem;
-  transform: translateY(1px) rotate(180deg);
-  transition: transform .25s ease;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-right: 1.8px solid currentColor;
+  border-bottom: 1.8px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
 }
 
-.nav-dropdown:hover .nav-dropdown-toggle,
-.nav-dropdown.open .nav-dropdown-toggle {
-  color: var(--primary-dark);
-}
-
-/* Saat kursor di Produk (desktop) atau menu dibuka lewat klik (HP):
-   panah menghadap ke BAWAH */
+/* Saat menu terbuka, chevron menghadap ke atas. */
 .nav-dropdown:hover .nav-dropdown-toggle span,
 .nav-dropdown:focus-within .nav-dropdown-toggle span,
 .nav-dropdown.open .nav-dropdown-toggle span {
-  transform: translateY(-1px) rotate(0deg);
+  transform: translateY(2px) rotate(225deg);
 }
 
 /* Jembatan hover di bawah tombol Produk (menyambung tombol ke menu) */
@@ -147,17 +171,20 @@
   position: absolute;
   top: calc(100% + 10px);
   left: 50%;
-  width: 240px;
+  width: 260px;
   transform: translate(-50%, -8px);
   padding: 8px;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 14px 30px rgba(30, 41, 59, .12);
+  border-radius: 10px;
+  box-shadow: 0 16px 36px rgba(30, 41, 59, 0.15);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s;
 }
 
 /* Jembatan hover selebar MENU, menutup celah di atas kotak menu
@@ -181,20 +208,34 @@
 
 .nav-dropdown-menu a {
   display: block;
-  padding: 12px 14px;
-  border-radius: 8px;
+  padding: 11px 12px;
+  border-radius: 6px;
   color: var(--text);
   font-weight: 500;
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease,
+    padding-left 0.18s ease;
 }
 
 .nav-dropdown-menu a + a {
-  border-top: 1px solid var(--border);
-  border-radius: 0;
+  margin-top: 2px;
 }
 
 .nav-dropdown-menu a:hover {
   color: var(--primary-dark);
   background: var(--primary-soft);
+  padding-left: 16px;
+}
+
+@media (min-width: 993px) and (max-width: 1100px) {
+  .navbar .container {
+    column-gap: 20px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -207,7 +248,12 @@
   .nav-dropdown-toggle {
     width: 100%;
     justify-content: space-between;
-    padding: 0;
+    padding: 4px 0;
+  }
+
+  .nav-dropdown-toggle::after {
+    bottom: -3px;
+    right: 24px;
   }
 
   .nav-dropdown::after,
@@ -226,6 +272,7 @@
     pointer-events: auto;
     box-shadow: none;
     background: #f8fafc;
+    border-color: transparent;
   }
 
   .nav-dropdown.open .nav-dropdown-menu {
