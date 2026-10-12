@@ -1,6 +1,6 @@
 /* Data produk. Model di halaman brand memakai ID yang sama untuk halaman detail. */
 const BASE = document.body.dataset.base || "";
-const WA = "6281234567890";
+const WA = "6281137911115";
 
 const product = (id, name, type, series, size, image, desc, long, specs = {}) => ({
   id, name, type, series, size, image, desc, long,

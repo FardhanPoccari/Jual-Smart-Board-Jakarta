@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kontak Kami | Jual Smart Board Jakarta</title>
-    <meta name="description" content="Hubungi Jual Smart Board Jakarta untuk konsultasi dan penawaran Smart Board." />
+    <meta name="description" content="WhatsApp, email, dan area layanan Jual Smart Board Jakarta, lengkap dengan peta." />
     <meta property="og:title" content="Kontak Kami | Jual Smart Board Jakarta" />
-    <meta property="og:description" content="Hubungi Jual Smart Board Jakarta untuk konsultasi dan penawaran Smart Board." />
+    <meta property="og:description" content="WhatsApp, email, dan area layanan Jual Smart Board Jakarta, lengkap dengan peta." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="../assets/images/hero/hero-1.jpg" />
 
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../assets/css/cta.css" />
     <link rel="stylesheet" href="../assets/css/footer.css" />
     <link rel="stylesheet" href="../assets/css/page.css" />
+    <link rel="stylesheet" href="../assets/css/contact-map.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
 
@@ -40,6 +41,7 @@
           <div class="nav-dropdown">
             <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Produk <span aria-hidden="true"></span></button>
             <div class="nav-dropdown-menu">
+              <a href="produk.html" class="nav-all-products-link">Semua Produk</a>
               <a href="../pages/produk-hikvision.html">Smart Board Hikvision</a>
               <a href="../pages/produk-zelt.html">Smart Board Zelt</a>
               <a href="../pages/produk-samsung.html">Smart Board Samsung</a>
@@ -48,70 +50,63 @@
           <a href="../pages/portofolio.html">Portofolio</a>
           <a href="../pages/artikel.html">Artikel</a>
           <a href="../pages/kontak.html" class="active" aria-current="page">Kontak</a>
-          <a class="btn btn-primary nav-cta" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20konsultasi%20Smart%20Board" target="_blank" rel="noopener">Konsultasi Sekarang</a>
+          <a class="btn btn-primary nav-cta" href="https://wa.me/6281137911115?text=Halo%2C%20saya%20ingin%20konsultasi%20Smart%20Board" target="_blank" rel="noopener">Konsultasi Sekarang</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- ============ JUDUL HALAMAN ============ -->
-      <section class="page-hero">
+      <section class="page-hero contact-page-hero">
         <div class="container">
-          <h1 class="intro">Kontak Kami</h1>
-          <p class="intro">Konsultasi gratis lewat WhatsApp, kami siap membantu memilih Smart Board yang sesuai.</p>
+          <span class="section-kicker intro">Hubungi Kami</span>
+          <h1 class="intro">Kontak &amp; Lokasi</h1>
+          <p class="intro">Punya pertanyaan seputar Smart Board? Hubungi kami melalui WhatsApp atau email, dan lihat area layanan kami di peta.</p>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container contact-grid">
-          <div class="contact-info">
-            <div class="card contact-card fade-up">
-              <div class="icon">💬</div>
-              <div>
-                <h3>WhatsApp</h3>
-                <p><a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62 812-3456-7890</a></p>
+      <section class="section contact-location-section">
+        <div class="container contact-location-layout">
+          <div class="contact-simple fade-left">
+            <span class="section-kicker">Terhubung dengan Kami</span>
+            <h2>Diskusikan kebutuhan Smart Board Anda.</h2>
+            <p class="contact-desc">Kami siap membantu menjawab pertanyaan terkait pilihan produk, penggunaan, dan kebutuhan instalasi.</p>
+
+            <div class="contact-methods">
+              <a class="contact-method" href="https://wa.me/6281137911115?text=Halo%2C%20saya%20ingin%20konsultasi%20Smart%20Board" target="_blank" rel="noopener noreferrer">
+                <span class="contact-method-icon" aria-hidden="true">💬</span>
+                <span class="contact-method-body"><strong>WhatsApp</strong><span>+62 811-3791-1115</span></span>
+                <span class="contact-method-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="contact-method" href="mailto:info@jualsmartboardjakarta.id">
+                <span class="contact-method-icon" aria-hidden="true">✉️</span>
+                <span class="contact-method-body"><strong>Email</strong><span>info@jualsmartboardjakarta.id</span></span>
+                <span class="contact-method-arrow" aria-hidden="true">↗</span>
+              </a>
+              <div class="contact-method contact-method-static">
+                <span class="contact-method-icon" aria-hidden="true">📍</span>
+                <span class="contact-method-body"><strong>Area Layanan</strong><span>Jakarta, Indonesia</span></span>
               </div>
             </div>
-            <div class="card contact-card fade-up">
-              <div class="icon">✉️</div>
-              <div>
-                <h3>Email</h3>
-                <p><a href="mailto:info@jualsmartboardjakarta.id">info@jualsmartboardjakarta.id</a></p>
-              </div>
-            </div>
-            <div class="card contact-card fade-up">
-              <div class="icon">📍</div>
-              <div>
-                <h3>Alamat</h3>
-                <p>Jakarta, Indonesia</p>
-              </div>
-            </div>
+            <p class="contact-location-note">Lokasi pada peta menunjukkan wilayah Jakarta secara umum, bukan titik alamat kantor atau toko tertentu.</p>
           </div>
 
-          <!-- Form ini membuka WhatsApp dengan pesan yang sudah terisi (lihat assets/js/contact.js) -->
-          <form class="card contact-form fade-up" id="contact-form">
-            <h3>Kirim Pesan</h3>
-            <label
-              >Nama
-              <input type="text" name="nama" placeholder="Nama Anda" required />
-            </label>
-            <label
-              >Kebutuhan
-              <select name="kebutuhan">
-                <option>Smart Board 65 Inch</option>
-                <option>Smart Board 75 Inch</option>
-                <option>Smart Board 86 Inch</option>
-                <option>Interactive Flat Panel</option>
-                <option>Digital Signage</option>
-                <option>Lainnya</option>
-              </select>
-            </label>
-            <label
-              >Pesan
-              <textarea name="pesan" rows="4" placeholder="Tulis kebutuhan Anda..."></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Kirim via WhatsApp</button>
-          </form>
+          <div class="contact-map-wrap fade-right">
+            <div class="contact-map-title"><span>Lokasi &amp; Peta</span><span aria-hidden="true">↗</span></div>
+            <div class="contact-map-frame">
+              
+          <iframe
+            title="Lokasi PT Cahaya Mustika Internesia"
+            src="https://maps.google.com/maps?q=PT%20Cahaya%20Mustika%20Internesia%2C%20Jl.%20Penjernihan%20II%20No.7%2C%20Jakarta%20Pusat&amp;z=17&amp;output=embed"
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+
+            </div>
+            <div class="contact-map-footer"><span><strong>Jakarta, Indonesia</strong><small>Wilayah layanan</small></span><a href="https://www.google.com/maps/search/?api=1&amp;query=Jakarta%2C%20Indonesia" target="_blank" rel="noopener noreferrer">Buka Google Maps <span aria-hidden="true">↗</span></a></div>
+          </div>
         </div>
       </section>
     </main>
@@ -146,7 +141,7 @@
           <div>
             <h4>Kontak</h4>
             <ul>
-              <li>WhatsApp: +62 812-3456-7890</li>
+              <li>WhatsApp: +62 811-3791-1115</li>
               <li>Email: info@jualsmartboardjakarta.id</li>
               <li>Alamat: Jakarta, Indonesia</li>
             </ul>
@@ -167,7 +162,6 @@
     <script src="../assets/js/modal.js"></script>
     <script src="../assets/js/faq.js"></script>
     <script src="../assets/js/back-to-top.js"></script>
-    <script src="../assets/js/contact.js"></script>
     <script src="../assets/js/main.js"></script>
   </body>
 </html>

@@ -671,6 +671,7 @@
   line-height: 1;
   font-weight: 900;
   color: var(--primary-dark);
+  padding-left: 16px; /* Nomor sedikit ke kanan, teks tetap sejajar */
 }
 
 .advantage-item h3 {
@@ -769,6 +770,7 @@
 
   .advantage-number {
     font-size: 1.45rem;
+    padding-left: 6px;
   }
 
   /* Hikvision */

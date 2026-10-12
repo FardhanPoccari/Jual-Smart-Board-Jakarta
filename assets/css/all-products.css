@@ -1,0 +1,153 @@
+/* Semua Produk: 27 model dari tiga brand, dengan filter seperti halaman brand. */
+.catalog-section {
+  padding-top: 54px;
+  padding-bottom: 96px;
+}
+.page-hero.catalog-header {
+  padding: 112px 0 24px;
+}
+
+@media (max-width: 768px) {
+  .page-hero.catalog-header {
+    padding: 96px 0 24px;
+  }
+}
+
+.catalog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 0 52px;
+  padding: 22px 24px;
+  background: #f6f9ff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.catalog-result-count {
+  color: var(--text-muted);
+  font-size: .96rem;
+}
+.catalog-result-count strong {
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+.catalog-filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.catalog-filter-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.catalog-filter-field .catalog-filter {
+  width: 216px;
+}
+.catalog-filter .brand-series-menu {
+  max-height: 310px;
+  overflow-y: auto;
+}
+.catalog-brand {
+  margin: 0 0 72px;
+  scroll-margin-top: 105px;
+}
+.catalog-brand[hidden],
+.catalog-series-group[hidden],
+.catalog-empty[hidden] {
+  display: none !important;
+}
+.catalog-brand-heading {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 0 20px;
+  margin: 0 0 28px;
+  border-bottom: 1px solid var(--border);
+}
+.catalog-brand-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  letter-spacing: -.02em;
+}
+.catalog-brand-heading p {
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+.catalog-brand-link {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--primary-dark);
+  font-size: .92rem;
+  font-weight: 700;
+}
+.catalog-brand-link:hover {
+  text-decoration: underline;
+}
+.catalog-series-group {
+  margin: 0 0 42px;
+}
+.catalog-series-heading {
+  margin-bottom: 22px;
+}
+.catalog-series-heading h3 {
+  position: relative;
+  padding-left: 13px;
+  margin: 0 0 7px;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.35;
+}
+.catalog-series-heading h3::before {
+  content: "";
+  position: absolute;
+  top: .1em;
+  left: 0;
+  height: 1em;
+  width: 4px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+.catalog-series-heading p {
+  color: var(--text-muted);
+  max-width: 920px;
+  font-size: .94rem;
+}
+.catalog-product-grid .brand-model-card .btn {
+  margin-top: auto;
+}
+.catalog-product-grid .brand-model-card .card-body {
+  gap: 10px;
+}
+.catalog-product-grid .brand-model-image {
+  height: 220px;
+}
+.catalog-product-grid .brand-model-card .btn {
+  margin-top: 18px;
+}
+.catalog-empty {
+  margin: 36px auto;
+  padding: 34px;
+  text-align: center;
+  color: var(--text-muted);
+  background: #f8fafc;
+  border-radius: 12px;
+}
+@media (max-width: 860px) {
+  .catalog-toolbar { align-items: flex-start; }
+  .catalog-filter-controls { width: 100%; }
+}
+@media (max-width: 650px) {
+  .catalog-section { padding: 38px 0 64px; }
+  .catalog-toolbar { padding: 16px; margin-bottom: 36px; }
+  .catalog-filter-controls { flex-direction: column; gap: 12px; }
+  .catalog-filter-field { width: 100%; justify-content: space-between; }
+  .catalog-filter-field .catalog-filter { width: min(260px, 73%); }
+  .catalog-brand-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .catalog-brand { margin-bottom: 52px; }
+  .catalog-series-group { margin-bottom: 30px; }
+  .catalog-product-grid .brand-model-image { height: 200px; }
+}

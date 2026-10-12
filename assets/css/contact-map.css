@@ -1,0 +1,29 @@
+/* Kontak ringkas: WA, email, area layanan dan Google Maps. */
+.contact-page-hero p { max-width:610px; }
+.contact-location-section { padding-top:58px; padding-bottom:100px; }
+.contact-location-layout { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:start; gap:64px; }
+.contact-simple h2 { font-size:clamp(1.6rem,3vw,2.35rem); line-height:1.25; margin-top:5px; max-width:460px; }
+.contact-simple .contact-desc { color:var(--text-muted); margin:18px 0 24px; max-width:430px; font-size:.97rem; line-height:1.8; }
+.contact-methods { border-top:1px solid var(--border); }
+.contact-method { display:flex; align-items:center; gap:16px; padding:19px 4px; border-bottom:1px solid var(--border); min-width:0; }
+.contact-method:not(.contact-method-static):hover .contact-method-arrow { transform:translate(2px,-2px); }
+.contact-method-icon { display:grid; place-items:center; width:48px; height:48px; flex-shrink:0; border-radius:13px; background:var(--primary-soft); font-size:1.22rem; }
+.contact-method-body { display:flex; flex-direction:column; min-width:0; overflow-wrap:anywhere; }
+.contact-method-body strong { font-size:.91rem; }
+.contact-method-body>span { color:var(--text-muted); font-size:.95rem; }
+.contact-method-arrow { color:var(--primary-dark); font-size:1.35rem; margin-left:auto; transition:transform .2s; }
+.contact-location-note { margin-top:18px; font-size:.8rem; color:#697d95; line-height:1.7; }
+.contact-map-wrap { border:1px solid #dde7f3; border-radius:19px; overflow:hidden; background:white; box-shadow:var(--shadow); }
+.contact-map-title { padding:19px 23px; display:flex; justify-content:space-between; font-weight:800; }
+.contact-map-title span:last-child { color:var(--primary-dark); }
+.contact-map-frame { height:365px; background:#e9f1fb; }
+.contact-map-frame iframe { display:block; width:100%; height:100%; border:0; }
+.contact-map-footer { padding:17px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.contact-map-footer>span { display:flex; flex-direction:column; }
+.contact-map-footer strong { font-size:.9rem; }
+.contact-map-footer small { color:var(--text-muted); }
+.contact-map-footer a { color:var(--primary-dark); font-weight:750; font-size:.84rem; }
+.contact-map-footer a:hover { text-decoration:underline; }
+@media(max-width:900px) { .contact-location-layout { gap:33px; } }
+@media(max-width:740px) { .contact-location-layout { grid-template-columns:1fr; gap:35px; } .contact-map-frame { height:340px; } .contact-location-section { padding:42px 0 70px; } }
+@media(max-width:400px) { .contact-map-footer { flex-wrap:wrap; } }

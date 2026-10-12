@@ -1,0 +1,175 @@
+/* HERO GAMBAR PENUH — Hikvision, Samsung, dan ZELT.
+   Foto diganti lewat src pada .product-hero-image di HTML.
+   Gunakan foto horizontal sekitar 1920 x 900 px. */
+.product-hero {
+  --product-hero-height: 720px;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--product-hero-height);
+  overflow: hidden;
+  padding: 96px 0 74px;
+  color: #fff;
+  background: #052c46;
+  text-align: left;
+}
+
+/* Gelapkan area tulisan, biarkan foto di kanan tetap terlihat. */
+.product-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(3, 21, 39, .96) 0%,
+    rgba(3, 21, 39, .90) 32%,
+    rgba(3, 21, 39, .76) 52%,
+    rgba(3, 21, 39, .25) 76%,
+    rgba(3, 21, 39, .08) 100%);
+}
+
+/* Wrapper tidak lagi berupa grid dua kolom. */
+.product-hero .product-hero-inner {
+  position: static;
+  display: block;
+  width: min(1140px, 92%);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.product-hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(650px, 100%);
+}
+
+.product-hero .brand-hero-eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #d9ebff;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.product-hero h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .2);
+}
+
+.product-hero .brand-hero-content > h1 {
+  min-height: 5.4em;
+}
+
+.product-hero p {
+  max-width: 630px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, .9);
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+
+.product-hero .brand-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.product-hero .btn-outline-white {
+  border: 2px solid rgba(255, 255, 255, .72);
+  color: #fff;
+  background: transparent;
+}
+
+.product-hero .btn-outline-white:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+/* Kotak foto lama kini memenuhi seluruh section hero. */
+.product-hero-visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  pointer-events: none;
+}
+
+.product-hero-image-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.product-hero-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-image-position, center 30%);
+  transform: none;
+}
+
+.product-hero-visual figcaption {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .product-hero {
+    --product-hero-height: 680px;
+    padding: 104px 0 56px;
+  }
+
+  .product-hero h1 {
+    font-size: clamp(1.8rem, 5.4vw, 2.4rem);
+    line-height: 1.18;
+  }
+
+  .product-hero .brand-hero-content > h1 {
+    min-height: 0;
+  }
+
+  .product-hero p {
+    font-size: .95rem;
+  }
+
+  .product-hero .btn {
+    padding: 11px 18px;
+    font-size: .9rem;
+  }
+
+  .product-hero::after {
+    background: linear-gradient(90deg,
+      rgba(3, 21, 39, .93), rgba(3, 21, 39, .72));
+  }
+
+  .product-hero-image {
+    object-position: var(--hero-image-position-mobile, 70% 30%);
+  }
+}
+
+@media (max-width: 380px) {
+  .product-hero {
+    --product-hero-height: 780px;
+  }
+}
