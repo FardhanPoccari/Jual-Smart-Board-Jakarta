@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/hero.css" />
     <link rel="stylesheet" href="assets/css/products.css" />
-    <link rel="stylesheet" href="assets/css/usecases.css" />
+    <link rel="stylesheet" href="assets/css/usecases.css?v=5-ruangan" />
     <link rel="stylesheet" href="assets/css/information.css" />
     <link rel="stylesheet" href="assets/css/faq.css" />
     <link rel="stylesheet" href="assets/css/cta.css" />
@@ -132,39 +132,69 @@
         <div class="container">
           <div class="usecases-head fade-up">
             <span class="usecases-kicker">Solusi untuk Berbagai Kebutuhan</span>
-            <h2>Mengapa Smart Board Menjadi Pilihan untuk Pembelajaran dan Kolaborasi di Jakarta?</h2>
-            <p>Gunakan Smart Board sesuai karakter ruangan. Arahkan kursor ke pilihan di samping untuk melihat suasana ruang yang berbeda.</p>
+            <h2 id="usecases-heading">Mengapa Smart Board Menjadi Pilihan untuk Pembelajaran dan Kolaborasi di Jakarta?</h2>
+            <p>Temukan penggunaan Smart Board sesuai kebutuhan ruangan. Gulir pilihan 01–05 atau klik ruangan untuk melihat gambar yang sesuai.</p>
           </div>
 
           <div class="usecases-layout">
-            <div class="usecase-visual fade-left" aria-live="polite">
-              <img class="usecase-image active" data-usecase-image="0" src="assets/images/portfolio/Hikvision Smart Board Classroom Lesson.png" alt="Smart Board di ruang kelas" loading="lazy" />
-              <img class="usecase-image" data-usecase-image="1" src="assets/images/portfolio/Smart Board Presentation in Aula.png" alt="Smart Board di aula" loading="lazy" />
-              <img class="usecase-image" data-usecase-image="2" src="assets/images/portfolio/Hikvision Smart Board on Auditorium Stage.png" alt="Smart Board di auditorium" loading="lazy" />
-            </div>
+            <figure class="usecase-visual fade-left" id="usecase-visual">
+              <img class="usecase-image active" data-usecase-image="0" src="assets/images/portfolio/Hikvision Smart Board Classroom Lesson.png" alt="Guru menjelaskan materi menggunakan Smart Board di ruang kelas" loading="lazy" aria-hidden="false" />
+              <img class="usecase-image" data-usecase-image="1" src="assets/images/usecases/ruang-rapat.png" alt="Tim kantor membahas laporan dan menulis di Smart Board dalam ruang rapat" loading="lazy" aria-hidden="true" />
+              <img class="usecase-image" data-usecase-image="2" src="assets/images/usecases/ruang-pelatihan.png" alt="Instruktur memberikan pelatihan interaktif menggunakan Smart Board" loading="lazy" aria-hidden="true" />
+              <img class="usecase-image" data-usecase-image="3" src="assets/images/usecases/laboratorium-komputer.png" alt="Guru mendemonstrasikan aplikasi di Smart Board dalam laboratorium komputer" loading="lazy" aria-hidden="true" />
+              <img class="usecase-image" data-usecase-image="4" src="assets/images/usecases/bengkel-rpl.png" alt="Guru dan siswa merancang proyek aplikasi di Smart Board dalam bengkel RPL" loading="lazy" aria-hidden="true" />
+              <figcaption class="usecase-caption" aria-live="polite" aria-atomic="true">
+                <span data-usecase-title>Ruang Kelas</span>
+                <span class="usecase-counter" data-usecase-counter>01 / 05</span>
+              </figcaption>
+            </figure>
 
-            <div class="usecase-list fade-right">
-              <button class="usecase-item active" type="button" data-usecase="0">
-                <span class="usecase-number">01</span>
-                <span
-                  ><h3>Ruang Kelas</h3>
-                  <p>Untuk pembelajaran interaktif, presentasi materi, dan diskusi siswa yang lebih menarik.</p></span
-                >
-              </button>
-              <button class="usecase-item" type="button" data-usecase="1">
-                <span class="usecase-number">02</span>
-                <span
-                  ><h3>Aula</h3>
-                  <p>Untuk seminar, penyampaian materi, rapat, dan kegiatan bersama dengan tampilan yang jelas.</p></span
-                >
-              </button>
-              <button class="usecase-item" type="button" data-usecase="2">
-                <span class="usecase-number">03</span>
-                <span
-                  ><h3>Auditorium</h3>
-                  <p>Untuk pelatihan, presentasi skala besar, dan kolaborasi dengan banyak peserta.</p></span
-                >
-              </button>
+            <div class="usecase-browser fade-right">
+              <div class="usecase-toolbar">
+                <span class="usecase-list-label">Pilihan Ruangan</span>
+              </div>
+              <div class="usecase-list" id="usecase-list" role="group" aria-label="Lima pilihan ruangan Smart Board, gulir atau pilih ruangan" tabindex="0">
+                <button class="usecase-item active" type="button" data-usecase="0" aria-pressed="true" aria-controls="usecase-visual">
+                  <span class="usecase-number">01</span>
+                  <span class="usecase-copy">
+                    <span class="usecase-title">Ruang Kelas</span>
+                    <span class="usecase-description">Untuk pembelajaran interaktif, presentasi materi, dan diskusi siswa yang lebih menarik.</span>
+                    <span class="usecase-place">Sekolah dan kampus</span>
+                  </span>
+                </button>
+                <button class="usecase-item" type="button" data-usecase="1" aria-pressed="false" aria-controls="usecase-visual">
+                  <span class="usecase-number">02</span>
+                  <span class="usecase-copy">
+                    <span class="usecase-title">Ruang Rapat</span>
+                    <span class="usecase-description">Untuk presentasi bisnis, pembahasan laporan, dan mencatat hasil diskusi langsung di layar.</span>
+                    <span class="usecase-place">Kantor perusahaan dan instansi</span>
+                  </span>
+                </button>
+                <button class="usecase-item" type="button" data-usecase="2" aria-pressed="false" aria-controls="usecase-visual">
+                  <span class="usecase-number">03</span>
+                  <span class="usecase-copy">
+                    <span class="usecase-title">Ruang Pelatihan</span>
+                    <span class="usecase-description">Untuk workshop, penjelasan materi, dan latihan interaktif bersama instruktur.</span>
+                    <span class="usecase-place">Pusat pelatihan dan lembaga kursus</span>
+                  </span>
+                </button>
+                <button class="usecase-item" type="button" data-usecase="3" aria-pressed="false" aria-controls="usecase-visual">
+                  <span class="usecase-number">04</span>
+                  <span class="usecase-copy">
+                    <span class="usecase-title">Laboratorium Komputer</span>
+                    <span class="usecase-description">Untuk demonstrasi aplikasi, penjelasan langkah kerja, dan praktik komputer yang terarah.</span>
+                    <span class="usecase-place">Sekolah, SMK, dan kampus</span>
+                  </span>
+                </button>
+                <button class="usecase-item" type="button" data-usecase="4" aria-pressed="false" aria-controls="usecase-visual">
+                  <span class="usecase-number">05</span>
+                  <span class="usecase-copy">
+                    <span class="usecase-title">Bengkel RPL</span>
+                    <span class="usecase-description">Untuk pembahasan kode, perancangan aplikasi, dan pengerjaan proyek perangkat lunak bersama.</span>
+                    <span class="usecase-place">Ruang praktik RPL di SMK</span>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -330,7 +360,7 @@
     <!-- Script (urutan penting: products.js harus paling awal, main.js paling akhir) -->
     <script src="assets/js/nav-history.js"></script>
     <script src="assets/js/products.js"></script>
-    <script src="assets/js/usecases.js"></script>
+    <script src="assets/js/usecases.js?v=5-ruangan"></script>
     <script src="assets/js/hero-slider.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/animation.js"></script>

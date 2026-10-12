@@ -1,7 +1,6 @@
-/* ==========================================================
-   USE CASES — section interaktif di halaman Beranda
-   ========================================================== */
+/* Lima ruangan: gambar di kiri dan daftar yang bisa digulir di kanan. */
 .usecases {
+  --usecase-height: 450px;
   background: #fff;
 }
 
@@ -33,14 +32,16 @@
 
 .usecases-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
-  gap: 58px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+  gap: 48px;
+  align-items: start;
 }
 
 .usecase-visual {
   position: relative;
-  min-height: 430px;
+  height: var(--usecase-height);
+  min-width: 0;
+  margin: 0;
   border-radius: 22px;
   overflow: hidden;
   background: #eef4fb;
@@ -54,14 +55,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   opacity: 0;
-  transform: scale(1.025);
-  transition: opacity .35s ease, transform .55s ease;
+  pointer-events: none;
+  transition: opacity .35s ease;
 }
 
 .usecase-image.active {
   opacity: 1;
-  transform: scale(1);
 }
 
 .usecase-visual::after {
@@ -69,22 +70,123 @@
   position: absolute;
   inset: auto 0 0;
   height: 34%;
-  background: linear-gradient(transparent, rgba(5, 18, 38, .18));
+  background: linear-gradient(transparent, rgba(5, 18, 38, .76));
   pointer-events: none;
 }
 
-.usecase-list {
-  display: grid;
+.usecase-caption {
+  position: absolute;
+  z-index: 1;
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
+  color: #fff;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.usecase-counter {
+  flex-shrink: 0;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .06em;
+}
+
+.usecase-browser {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: var(--usecase-height);
+  min-width: 0;
+}
+
+.usecase-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 10px 0 2px;
+}
+
+.usecase-list-label {
+  color: var(--text-muted);
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.usecase-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.usecase-control {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dce9fb;
+  border-radius: 10px;
+  background: #f5f9ff;
+  color: var(--primary-dark);
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.usecase-control:hover:not(:disabled) {
+  background: var(--primary-soft);
+  border-color: var(--primary-dark);
+}
+
+.usecase-control:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.usecase-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: 12px;
+  padding: 4px 10px 4px 2px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b3ccef #f1f5fb;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+  border-radius: 16px;
+}
+
+.usecase-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.usecase-list::-webkit-scrollbar-track {
+  background: #f1f5fb;
+  border-radius: 8px;
+}
+
+.usecase-list::-webkit-scrollbar-thumb {
+  background: #b3ccef;
+  border-radius: 8px;
 }
 
 .usecase-item {
+  flex: 0 0 auto;
   width: 100%;
+  min-height: 134px;
   display: grid;
-  grid-template-columns: 46px 1fr;
+  grid-template-columns: 40px minmax(0, 1fr);
   gap: 14px;
   align-items: start;
-  padding: 18px 18px;
+  padding: 17px;
   border: 1px solid transparent;
   border-radius: 16px;
   background: transparent;
@@ -92,14 +194,16 @@
   text-align: left;
   font: inherit;
   cursor: pointer;
-  transition: .25s ease;
+  transition: background .2s ease, border-color .2s ease;
 }
 
-.usecase-item:hover,
+.usecase-item:hover {
+  background: #f8faff;
+}
+
 .usecase-item.active {
   background: #f5f9ff;
   border-color: #dce9fb;
-  transform: translateX(-4px);
 }
 
 .usecase-number {
@@ -111,27 +215,59 @@
   background: var(--primary-soft);
   color: var(--primary-dark);
   font-weight: 800;
+  font-variant-numeric: tabular-nums;
 }
 
-.usecase-item h3 {
+.usecase-item.active .usecase-number {
+  background: var(--primary-dark);
+  color: #fff;
+}
+
+.usecase-copy,
+.usecase-title,
+.usecase-description,
+.usecase-place {
+  display: block;
+}
+
+.usecase-title {
   font-size: 1.05rem;
-  margin-bottom: 4px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 5px;
 }
 
-.usecase-item p {
+.usecase-description {
   color: var(--text-muted);
-  font-size: .92rem;
+  font-size: .9rem;
   line-height: 1.6;
+}
+
+.usecase-place {
+  margin-top: 7px;
+  color: var(--primary-dark);
+  font-size: .74rem;
+  font-weight: 600;
+}
+
+.usecase-scroll-hint {
+  color: var(--text-muted);
+  font-size: .76rem;
+  padding-left: 2px;
 }
 
 @media (max-width: 900px) {
   .usecases-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 22px;
   }
 
   .usecase-visual {
-    min-height: 360px;
+    height: 360px;
+  }
+
+  .usecase-browser {
+    height: 370px;
   }
 }
 
@@ -141,12 +277,25 @@
   }
 
   .usecase-visual {
-    min-height: 250px;
+    height: auto;
+    aspect-ratio: 7 / 5;
     border-radius: 16px;
   }
 
+  .usecase-browser {
+    height: 300px;
+  }
+
+  .usecase-caption {
+    left: 16px;
+    right: 16px;
+    bottom: 15px;
+    font-size: .94rem;
+  }
+
   .usecase-item {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 12px;
     padding: 14px;
   }
 
@@ -154,9 +303,11 @@
     width: 36px;
     height: 36px;
   }
+}
 
-  .usecase-item:hover,
-  .usecase-item.active {
-    transform: none;
+@media (prefers-reduced-motion: reduce) {
+  .usecase-image,
+  .usecase-item {
+    transition: none;
   }
 }
