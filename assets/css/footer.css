@@ -37,3 +37,5 @@
   padding-top: 18px;
   border-top: 1px solid var(--border);
 }
+
+.footer a{overflow-wrap:anywhere}.footer a:focus-visible{outline:2px solid currentColor;outline-offset:4px}img{height:auto}.brand-model-image img,.gallery-slide img,.article-card img,.portfolio-image img{height:100%} @media(max-width:600px){.footer-grid{gap:24px}}

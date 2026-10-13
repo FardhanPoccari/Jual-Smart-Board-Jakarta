@@ -844,3 +844,6 @@
     animation: none;
   }
 }
+
+/* Rujukan teknis pada URL detail lama. */
+.detail-spec-source{margin:16px 0 8px;line-height:1.7}.detail-spec-source a{color:var(--primary-dark);font-weight:650}.detail-spec-source a:hover{text-decoration:underline}.detail-spec-note{font-size:.88rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px}

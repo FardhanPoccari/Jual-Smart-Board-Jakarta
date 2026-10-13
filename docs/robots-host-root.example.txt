@@ -1,0 +1,8 @@
+# Contoh untuk https://fardhanpoccari.github.io/robots.txt
+# File di docs ini tidak aktif sebagai robots.txt.
+# Jika host sudah memiliki aturan, gabungkan baris Sitemap di bawah tanpa
+# menimpa aturan website lain. Berlaku jika Anda mengelola root host ini.
+User-agent: *
+Allow: /
+
+Sitemap: https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/sitemap.xml

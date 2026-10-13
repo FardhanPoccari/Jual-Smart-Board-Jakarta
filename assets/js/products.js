@@ -51,6 +51,67 @@ const PRODUCTS = [
   product("ifp-86", "Interactive Flat Panel 86 Inch", "Interactive Flat Panel", "Umum", 86, "zelt/zelt-pro.webp", "Interactive Flat Panel 86 inch untuk sekolah dan perusahaan.", "Interactive Flat Panel 86 inch untuk kebutuhan display interaktif.", { "Ukuran Layar": "86 inch" })
 ];
 
+/* Data teknis yang sama dipakai oleh detail lama dan HTML detail statis.
+   Sumber resmi: Samsung WAD leaflet, halaman WMB, dan datasheet Hikvision.
+   Varian firmware/stok Hikvision berbeda; OS/RAM tidak diasumsikan dari foto. */
+const VERIFIED_SERIES_SPECS = {
+  "Samsung WAD": {
+    "Resolusi": "3840 × 2160 (4K UHD)",
+    "Sistem Operasi": "Android 13",
+    "Layar Sentuh": "Inframerah (IR), hingga 40 titik",
+    "RAM": "8 GB",
+    "Penyimpanan": "64 GB",
+    "Konektivitas": "HDMI, USB-A, USB-C, LAN, Wi-Fi, Bluetooth",
+    "USB-C": "Tampilan, kontrol sentuh, dan pengisian daya hingga 65 W",
+    "Ekspansi PC": "Slot OPS; modul PC dijual terpisah"
+  },
+  "Samsung WMB": {
+    "Resolusi": "3840 × 2160 (4K UHD)",
+    "Sistem Operasi": "Tizen 6.5",
+    "Layar Sentuh": "Inframerah (IR), hingga 20 titik",
+    "Penyimpanan": "32 GB",
+    "Konektivitas": "HDMI, DisplayPort, USB-C, LAN, Wi-Fi, Bluetooth"
+  },
+  "Ultra Series": {
+    "Resolusi": "3840 × 2160 (4K UHD)",
+    "Refresh Rate": "60 Hz",
+    "Layar Sentuh": "Inframerah (IR)",
+    "Ekspansi PC": "OPS Windows opsional; konfirmasi isi paket"
+  },
+  "Performance Series": {
+    "Resolusi": "3840 × 2160 (4K UHD)",
+    "Refresh Rate": "60 Hz",
+    "Layar Sentuh": "Inframerah (IR)",
+    "Ekspansi PC": "OPS Windows opsional; konfirmasi isi paket"
+  }
+};
+
+const WMB_SPEC_URLS = {
+  "samsung-wm55b": "https://www.samsung.com/id/smart-signage/interactive-display/flip-pro-wm55b-interactive-display-55-inch-lh55wmbwbgcxxd/",
+  "samsung-wm65b": "https://www.samsung.com/id/business/smart-signage/interactive-display/flip-pro-wm65b-interactive-display-lh65wmbwbgcxxd/",
+  "samsung-wm75b": "https://www.samsung.com/uk/business/smart-signage/interactive-display/flip-pro-wm75b-interactive-display-75-inch-lh75wmbwlgcxen/"
+};
+
+PRODUCTS.forEach(p => {
+  const extra = VERIFIED_SERIES_SPECS[p.series];
+  if (!extra) return;
+  Object.assign(p.specs, extra);
+  p.specNote = "Spesifikasi mengacu pada informasi produsen. Konfirmasikan varian regional, kelengkapan, dan ketersediaan unit sebelum pembelian.";
+  if (p.series === "Samsung WAD") {
+    p.specSource = {label:"Brosur resmi Samsung WAD (PDF)", url:"https://images.samsung.com/is/content/samsung/assets/za/Samsung_WAD_series_Leaflet_PRINT_240628_KV_1.pdf"};
+    p.features = ["Layar 4K untuk materi, dokumen, dan presentasi.", "Hingga 40 titik sentuh untuk aktivitas kolaboratif.", "Android 13 dengan akses layanan Google melalui sertifikasi EDLA.", "USB-C menyatukan tampilan, kontrol sentuh, dan pengisian daya."];
+  } else if (p.series === "Samsung WMB") {
+    p.specSource = {label:"Spesifikasi resmi Samsung WMB", url:WMB_SPEC_URLS[p.id]};
+    p.features = ["Layar 4K dengan sentuhan hingga 20 titik.", "Mode pena dan kuas untuk menulis serta menggambar.", "Koneksi HDMI, DisplayPort, dan USB-C untuk perangkat presentasi.", "Berbagi layar nirkabel untuk diskusi bersama tim."];
+  } else {
+    p.specNote = "Resolusi dan teknologi sentuh mengacu pada produsen. Versi OS, jumlah titik sentuh, RAM, penyimpanan, dan paket OPS mengikuti revisi unit; konfirmasikan datasheet unit yang ditawarkan.";
+    p.specSource = p.series === "Ultra Series"
+      ? {label:"Brosur resmi Hikvision Ultra (PDF)", url:"https://www.hikvision.com/content/dam/hikvision/en/brochures-download/display-product-documents/interactive-flat-panel-displays/ultra/Brochure_Ultra-series-IFPD_20240723.pdf"}
+      : {label:"Spesifikasi resmi Hikvision Performance", url:`https://pro-av.hikvision.com/en/products/interactive-flat-panel-display/interactive-flat-panels/performance-series/ds-d5b${p.size}rb-ep/`};
+    p.features = ["Layar 4K pada 60 Hz untuk presentasi dan materi pembelajaran.", "Sentuhan inframerah untuk anotasi dan papan tulis digital.", "Berbagi tampilan untuk membahas materi bersama.", "Modul OPS Windows tersedia sebagai pilihan tambahan."];
+  }
+});
+
 const waLink = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
 const DEFAULT_IMG = `${BASE}assets/images/smartboard.svg`;
 const imgPath = f => `${BASE}assets/images/products/${encodeURI(f)}`;
@@ -62,28 +123,28 @@ const imgFallback = `onerror="this.onerror=null;this.src='${DEFAULT_IMG}'"`;
    Taruh foto detail di folder produk, lalu daftarkan di sini.
    Urutan array = urutan slide. Slide pertama = foto utama kartu.
    ========================================================== */
-const numbered = (dir, prefix, nums, ext = "avif", overrides = {}) =>
-  nums.map(n => `${dir}/${prefix}${n}.${overrides[n] || ext}`);
+const numbered = (dir, prefix, nums, ext = "webp") =>
+  nums.map(n => `${dir}/${prefix}${n}.${ext}`);
 
 const GALLERY_SETS = {
-  "samsung-wad": numbered("samsung/WAD Detail", "Interactive Display WAD series detail ", [0,1,2,3,4,5,6,7,8,9,10,11], "avif", { 8: "jpg" }),
+  "samsung-wad": numbered("samsung/WAD Detail", "Interactive Display WAD series detail ", [0,1,2,3,4,5,6,7,8,9,10,11]),
   // nama file WMB detail 3 memakai DUA spasi di folder Anda — jangan diubah kecuali file-nya diganti
   "samsung-wmb": [
-    "samsung/WMB Detail/Interactive Display WMB detail 1.avif",
-    "samsung/WMB Detail/Interactive Display WMB detail 2.avif",
-    "samsung/WMB Detail/Interactive Display WMB detail  3.avif",
-    "samsung/WMB Detail/Interactive Display WMB detail 4.avif",
-    "samsung/WMB Detail/Interactive Display WMB detail 5.avif",
-    "samsung/WMB Detail/Interactive Display WMB detail 6.avif"
+    "samsung/WMB Detail/Interactive Display WMB detail 1.webp",
+    "samsung/WMB Detail/Interactive Display WMB detail 2.webp",
+    "samsung/WMB Detail/Interactive Display WMB detail  3.webp",
+    "samsung/WMB Detail/Interactive Display WMB detail 4.webp",
+    "samsung/WMB Detail/Interactive Display WMB detail 5.webp",
+    "samsung/WMB Detail/Interactive Display WMB detail 6.webp"
   ],
   "hikvision-ultra": [
-    "hikvision/DS-D5C75RB-A/DS-D5C75RB-A detail 1.png",
-    "hikvision/DS-D5C75RB-A/DS-D5C75RB-A detail 2.png",
-    "hikvision/DS-D5C75RB-A/DS-D5C75RB-3 detail 3.png"
+    "hikvision/DS-D5C75RB-A/DS-D5C75RB-A detail 1.webp",
+    "hikvision/DS-D5C75RB-A/DS-D5C75RB-A detail 2.webp",
+    "hikvision/DS-D5C75RB-A/DS-D5C75RB-3 detail 3.webp"
   ],
   "hikvision-performance": [
-    "hikvision/DS-D5B65RB-EP/DS-D5B65RB-EP detail 1.png",
-    "hikvision/DS-D5B65RB-EP/DS-D5B65RB-EP detail 2.png"
+    "hikvision/DS-D5B65RB-EP/DS-D5B65RB-EP detail 1.webp",
+    "hikvision/DS-D5B65RB-EP/DS-D5B65RB-EP detail 2.webp"
   ],
   "zelt": [
     "zelt/Zelt detail/zelt-pro Lurus.webp",
@@ -236,10 +297,8 @@ function detailBottomHTML(p) {
   return `
       <p class="detail-long">${p.long}</p>
       <table class="spec">${Object.entries(p.specs).map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("")}</table>
-      <div class="actions">
-        <a class="btn btn-primary" href="${waLink("Halo, saya ingin tanya produk " + p.name)}" target="_blank" rel="noopener">Tanya Produk</a>
-        <a class="btn btn-outline" href="${waLink("Halo, saya tertarik dengan " + p.name)}" target="_blank" rel="noopener">WhatsApp</a>
-      </div>`;
+      ${p.specSource ? `<p class="detail-spec-source"><a href="${p.specSource.url}" target="_blank" rel="noopener noreferrer">${p.specSource.label} ↗</a></p><p class="detail-spec-note">${p.specNote}</p>` : ""}
+      <div class="actions"><a class="btn btn-primary" href="${waLink('Halo, saya ingin menanyakan harga dan ketersediaan Smart Board ' + p.name + '. Mohon informasi lebih lanjut.')}" target="_blank" rel="noopener">Minta Penawaran Produk</a></div>`;
 }
 
 function brandPageFor(p) {

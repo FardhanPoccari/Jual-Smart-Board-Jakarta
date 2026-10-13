@@ -5,8 +5,8 @@
    - File gambar ditaruh di assets/images/hero/
    ========================================================== */
 const HERO_IMAGES = [
-  "contoh 3.png"
-  // , "hero-2.jpg", "hero-3.jpg"   ← tambahkan baris seperti ini untuk slideshow
+  "hero-kelas-revisi12.webp"
+  // , "hero-2.webp", "hero-3.webp"   ← tambahkan baris seperti ini untuk slideshow
 ];
 
 const HERO_AUTOPLAY_MS = 5000;

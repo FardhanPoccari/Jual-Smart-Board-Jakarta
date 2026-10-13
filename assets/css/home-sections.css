@@ -1,0 +1,212 @@
+/* Penataan section Beranda. Dimuat terakhir agar tidak mengubah halaman lain. */
+/* Batasi gerakan reveal horizontal tanpa memotong daftar scroll ruangan. */
+.usecases,
+.faq-section {
+  overflow-x: clip;
+}
+.usecases .usecases-layout {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: 40px;
+}
+
+.usecases .usecase-visual,
+.usecases .usecase-browser {
+  height: var(--usecase-height);
+}
+
+.usecases .usecase-toolbar {
+  min-height: 30px;
+}
+
+.usecases .usecase-list-label {
+  font-size: .85rem;
+  color: var(--text);
+}
+
+.usecases .usecase-item {
+  min-height: 138px;
+}
+
+.advantages-section .advantages-layout {
+  display: block;
+}
+
+.advantages-section .advantages-intro {
+  position: static;
+  max-width: 740px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.advantages-section .advantages-intro h2,
+.faq-section .faq-intro h2 {
+  font-size: clamp(1.85rem, 3.4vw, 2.45rem);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+.advantages-section .advantages-intro p,
+.faq-section .faq-intro p {
+  margin-top: 12px;
+  line-height: 1.75;
+}
+
+.advantages-section .advantages-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+
+.advantages-section .advantage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 26px;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: none;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.advantages-section .advantage-item:hover {
+  transform: translateY(-3px);
+  border-color: #b6cef1;
+  background: #fbfdff;
+}
+
+.advantage-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.advantage-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.advantages-section .advantage-item h3 {
+  font-size: 1.06rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.advantages-section .advantage-item p {
+  font-size: .92rem;
+  line-height: 1.75;
+}
+
+.faq-section .faq-layout {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  grid-template-areas: "intro faq";
+  gap: 56px;
+  align-items: start;
+}
+
+.faq-section .faq-intro {
+  grid-area: intro;
+  min-width: 0;
+  max-width: 390px;
+}
+
+.faq-section .faq {
+  grid-area: faq;
+  min-width: 0;
+  max-width: none;
+}
+
+.faq-section .faq-item {
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.faq-section .faq-q {
+  padding: 19px 22px;
+  line-height: 1.55;
+}
+
+.faq-section .faq-a p {
+  font-size: .94rem;
+  line-height: 1.75;
+  padding: 0 22px 20px;
+}
+
+@media (max-width: 980px) {
+  .advantages-section .advantages-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faq-section .faq-layout {
+    gap: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .usecases .usecases-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .usecases .usecase-visual {
+    height: 360px;
+  }
+
+  .usecases .usecase-browser {
+    height: 370px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section .faq-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "faq";
+    gap: 28px;
+  }
+
+  .faq-section .faq-intro {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .usecases .usecase-visual {
+    height: auto;
+    aspect-ratio: 7 / 5;
+  }
+
+  .usecases .usecase-browser {
+    height: 315px;
+  }
+
+  .advantages-section .advantages-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .advantages-section .advantage-item {
+    padding: 22px;
+    gap: 15px;
+  }
+
+  .advantages-section .advantages-intro {
+    margin-bottom: 28px;
+  }
+
+  .faq-section .faq-q {
+    padding: 17px;
+    font-size: .94rem;
+  }
+
+  .faq-section .faq-a p {
+    padding: 0 17px 18px;
+  }
+}

@@ -1,6 +1,6 @@
 /* Kontak ringkas: WA, email, area layanan dan Google Maps. */
 .contact-page-hero p { max-width:610px; }
-.contact-location-section { padding-top:58px; padding-bottom:100px; }
+.contact-location-section { padding-top:58px; padding-bottom:100px; overflow-x:clip; }
 .contact-location-layout { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:start; gap:64px; }
 .contact-simple h2 { font-size:clamp(1.6rem,3vw,2.35rem); line-height:1.25; margin-top:5px; max-width:460px; }
 .contact-simple .contact-desc { color:var(--text-muted); margin:18px 0 24px; max-width:430px; font-size:.97rem; line-height:1.8; }
@@ -8,6 +8,7 @@
 .contact-method { display:flex; align-items:center; gap:16px; padding:19px 4px; border-bottom:1px solid var(--border); min-width:0; }
 .contact-method:not(.contact-method-static):hover .contact-method-arrow { transform:translate(2px,-2px); }
 .contact-method-icon { display:grid; place-items:center; width:48px; height:48px; flex-shrink:0; border-radius:13px; background:var(--primary-soft); font-size:1.22rem; }
+.contact-method-icon svg { display:block; color:var(--primary-dark); }
 .contact-method-body { display:flex; flex-direction:column; min-width:0; overflow-wrap:anywhere; }
 .contact-method-body strong { font-size:.91rem; }
 .contact-method-body>span { color:var(--text-muted); font-size:.95rem; }
@@ -27,3 +28,5 @@
 @media(max-width:900px) { .contact-location-layout { gap:33px; } }
 @media(max-width:740px) { .contact-location-layout { grid-template-columns:1fr; gap:35px; } .contact-map-frame { height:340px; } .contact-location-section { padding:42px 0 70px; } }
 @media(max-width:400px) { .contact-map-footer { flex-wrap:wrap; } }
+
+.contact-map-footer>span{min-width:0;flex:1;line-height:1.6}.contact-map-footer a{flex-shrink:0}.contact-map-footer small{display:block;overflow-wrap:anywhere}@media(max-width:600px){.contact-map-footer{flex-wrap:wrap}.contact-map-footer>span{flex-basis:100%}}

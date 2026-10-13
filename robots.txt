@@ -1,0 +1,6 @@
+# Project GitHub Pages: crawler membaca robots.txt dari root host.
+# Lihat README.md untuk Search Console dan lokasi robots.txt yang berlaku.
+User-agent: *
+Allow: /
+
+Sitemap: https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/sitemap.xml

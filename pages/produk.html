@@ -1,482 +1,464 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Produk | Jual Smart Board Jakarta</title>
-    <meta name="description" content="Katalog lengkap 27 model Smart Board dan aksesoris Hikvision, Samsung, serta ZELT, dengan filter merek dan seri." />
-    <meta property="og:title" content="Produk | Jual Smart Board Jakarta" />
-    <meta property="og:description" content="Katalog lengkap 27 model Smart Board dan aksesoris Hikvision, Samsung, serta ZELT, dengan filter merek dan seri." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="../assets/images/hero/hero-1.jpg" />
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/global.css" />
-    <link rel="stylesheet" href="../assets/css/navbar.css" />
-    <link rel="stylesheet" href="../assets/css/hero.css" />
-    <link rel="stylesheet" href="../assets/css/products.css" />
-    <link rel="stylesheet" href="../assets/css/brand-products.css" />
-    <link rel="stylesheet" href="../assets/css/all-products.css" />
-    <link rel="stylesheet" href="../assets/css/portfolio.css" />
-    <link rel="stylesheet" href="../assets/css/information.css" />
-    <link rel="stylesheet" href="../assets/css/faq.css" />
-    <link rel="stylesheet" href="../assets/css/cta.css" />
-    <link rel="stylesheet" href="../assets/css/footer.css" />
-    <link rel="stylesheet" href="../assets/css/page.css" />
-    <link rel="stylesheet" href="../assets/css/responsive.css" />
-    <noscript><style>.intro { opacity: 1; transform: none; }</style></noscript>
-  </head>
-
-  <body data-base="../">
-    <!-- ============ NAVBAR ============ -->
-    <header class="navbar">
-      <div class="container">
-        <a class="brand" href="../index.html">
-          <img class="brand-logo" src="../assets/images/logo/logo-cm.jpg" alt="Logo Jual Smart Board Jakarta" width="34" height="34" />
-          <span>Jual Smart Board Jakarta</span>
-        </a>
-
-        <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
-
-        <nav class="nav-links" aria-label="Utama">
-          <a href="../index.html">Beranda</a>
-          <div class="nav-dropdown">
-            <button class="nav-dropdown-toggle active" type="button" aria-expanded="false">Produk <span aria-hidden="true"></span></button>
-            <div class="nav-dropdown-menu">
-              <a href="produk.html" class="nav-all-products-link">Semua Produk</a>
-              <a href="../pages/produk-hikvision.html">Smart Board Hikvision</a>
-              <a href="../pages/produk-zelt.html">Smart Board Zelt</a>
-              <a href="../pages/produk-samsung.html">Smart Board Samsung</a>
-            </div>
-          </div>
-          <a href="../pages/portofolio.html">Portofolio</a>
-          <a href="../pages/artikel.html">Artikel</a>
-          <a href="../pages/kontak.html">Kontak</a>
-          <a class="btn btn-primary nav-cta" href="https://wa.me/6281137911115?text=Halo%2C%20saya%20ingin%20konsultasi%20Smart%20Board" target="_blank" rel="noopener">Konsultasi Sekarang</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- ============ JUDUL HALAMAN ============ -->
-      <section class="page-hero catalog-header">
-        <div class="container">
-          <h1 class="intro">Semua Produk Smart Board</h1>
-          <p class="intro">Pilihan Smart Board dan aksesoris dari Hikvision, Samsung, dan ZELT. Gunakan filter merek dan seri untuk menemukan produk yang Anda butuhkan.</p>
-        </div>
-      </section>
-
-      <!-- Katalog model seluruh brand. Konten statis agar tetap terbaca saat JavaScript nonaktif. -->
-      <section class="section catalog-section" aria-label="Katalog Semua Produk">
-        <div class="container">
-          <div class="catalog-toolbar" aria-label="Filter produk">
-            <p class="catalog-result-count" role="status" aria-live="polite"><strong id="catalog-visible-count">27</strong> produk ditampilkan</p>
-            <div class="catalog-filter-controls">
-              <div class="catalog-filter-field">
-                <span id="catalog-brand-label" class="brand-series-filter-label">Merek</span>
-                <div class="brand-series-filter catalog-filter" data-filter="brand" data-value="all">
-                  <button class="brand-series-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-labelledby="catalog-brand-label catalog-brand-current">
-                    <span class="brand-series-current" id="catalog-brand-current">Semua merek</span>
-                    <span class="brand-series-chevron" aria-hidden="true"></span>
-                  </button>
-                  <div class="brand-series-menu" role="menu" aria-labelledby="catalog-brand-label" hidden>
-                    <button class="brand-series-option" type="button" role="menuitemradio" aria-checked="true" data-value="all">Semua merek</button>
-                    <button class="brand-series-option" type="button" role="menuitemradio" aria-checked="false" data-value="hikvision">Hikvision</button>
-                    <button class="brand-series-option" type="button" role="menuitemradio" aria-checked="false" data-value="samsung">Samsung</button>
-                    <button class="brand-series-option" type="button" role="menuitemradio" aria-checked="false" data-value="zelt">ZELT</button>
-                  </div>
-                </div>
-              </div>
-              <div class="catalog-filter-field">
-                <span id="catalog-series-label" class="brand-series-filter-label">Seri</span>
-                <div class="brand-series-filter catalog-filter" data-filter="series" data-value="all">
-                  <button class="brand-series-trigger" type="button" aria-expanded="false" aria-haspopup="menu" aria-labelledby="catalog-series-label catalog-series-current">
-                    <span class="brand-series-current" id="catalog-series-current">Semua seri</span>
-                    <span class="brand-series-chevron" aria-hidden="true"></span>
-                  </button>
-                  <div class="brand-series-menu" role="menu" aria-labelledby="catalog-series-label" hidden>
-                    <button class="brand-series-option" type="button" role="menuitemradio" aria-checked="true" data-value="all">Semua seri</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      <section class="catalog-brand" data-brand="hikvision" id="catalog-hikvision">
-        <div class="catalog-brand-heading">
-          <div>
-            <span class="section-kicker">Hikvision · 9 produk</span>
-            <h2>Smart Board Hikvision</h2>
-            <p>Perangkat interaktif untuk ruang kelas, pelatihan, dan ruang rapat.</p>
-          </div>
-          <a href="produk-hikvision.html" class="catalog-brand-link">Lihat halaman Hikvision <span aria-hidden="true">↗</span></a>
-        </div>
-        <section class="catalog-series-group" data-series="hikvision-ultra">
-          <div class="catalog-series-heading">
-            <h3>Smart Board Hikvision Ultra Series</h3>
-            <p>Smart Board Hikvision Ultra Series tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung pembelajaran interaktif, presentasi, dan meeting.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5C65RB/A" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp"/></div>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Produk | Jual Smart Board Jakarta</title>
+<meta content="Katalog lengkap 27 model Smart Board dan aksesoris Hikvision, Samsung, serta ZELT, dengan filter merek dan seri." name="description"/>
+<meta content="Produk | Jual Smart Board Jakarta" property="og:title"/>
+<meta content="Katalog lengkap 27 model Smart Board dan aksesoris Hikvision, Samsung, serta ZELT, dengan filter merek dan seri." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/assets/images/hero/hero-1.webp" property="og:image"/>
+<!-- Stylesheet -->
+<link href="../assets/css/global.css" rel="stylesheet"/>
+<link href="../assets/css/navbar.css" rel="stylesheet"/>
+<link href="../assets/css/hero.css" rel="stylesheet"/>
+<link href="../assets/css/products.css" rel="stylesheet"/>
+<link href="../assets/css/brand-products.css" rel="stylesheet"/>
+<link href="../assets/css/all-products.css" rel="stylesheet"/>
+<link href="../assets/css/portfolio.css" rel="stylesheet"/>
+<link href="../assets/css/information.css" rel="stylesheet"/>
+<link href="../assets/css/faq.css" rel="stylesheet"/>
+<link href="../assets/css/cta.css" rel="stylesheet"/>
+<link href="../assets/css/footer.css" rel="stylesheet"/>
+<link href="../assets/css/page.css" rel="stylesheet"/>
+<link href="../assets/css/responsive.css" rel="stylesheet"/>
+<noscript><style>.intro { opacity: 1; transform: none; }</style></noscript>
+<link href="https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/pages/produk.html" rel="canonical"/><meta content="summary_large_image" name="twitter:card"/><link href="../assets/images/logo/logo.webp" rel="icon" type="image/webp"/><meta content="https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/pages/produk.html" property="og:url"/></head>
+<body data-base="../">
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+<div class="container">
+<a class="brand" href="../index.html">
+<img alt="Logo Jual Smart Board Jakarta" class="brand-logo" height="34" src="../assets/images/logo/logo-cm.webp" width="34"/>
+<span>Jual Smart Board Jakarta</span>
+</a>
+<button aria-expanded="false" aria-label="Menu" class="hamburger">☰</button>
+<nav aria-label="Utama" class="nav-links">
+<a href="../index.html">Beranda</a>
+<div class="nav-dropdown">
+<button aria-expanded="false" class="nav-dropdown-toggle active" type="button">Produk <span aria-hidden="true"></span></button>
+<div class="nav-dropdown-menu">
+<a class="nav-all-products-link" href="produk.html">Semua Produk</a>
+<a href="../pages/produk-hikvision.html">Smart Board Hikvision</a>
+<a href="../pages/produk-zelt.html">Smart Board Zelt</a>
+<a href="../pages/produk-samsung.html">Smart Board Samsung</a>
+</div>
+</div>
+<a href="../pages/portofolio.html">Portofolio</a>
+<a href="../pages/artikel.html">Artikel</a>
+<a href="../pages/kontak.html">Kontak</a>
+<a class="btn btn-primary nav-cta" href="https://wa.me/6281137911115?text=Halo%2C%20saya%20ingin%20konsultasi%20Smart%20Board" rel="noopener" target="_blank">Konsultasi Sekarang</a>
+</nav>
+</div>
+</header>
+<main>
+<!-- ============ JUDUL HALAMAN ============ -->
+<section class="page-hero catalog-header">
+<div class="container">
+<h1 class="intro">Semua Produk Smart Board</h1>
+<p class="intro">Temukan 27 produk Hikvision, Samsung, dan ZELT berdasarkan merek, seri, ukuran layar, atau kode model.</p>
+</div>
+</section>
+<!-- Katalog model seluruh brand. Konten statis agar tetap terbaca saat JavaScript nonaktif. -->
+<section aria-label="Katalog Semua Produk" class="section catalog-section">
+<div class="container">
+<div aria-label="Filter produk" class="catalog-toolbar"><div aria-label="Pencarian produk" class="catalog-search-box" role="search"><label class="sr-only" for="catalog-search">Cari Smart Board, merek, ukuran, atau model</label><span aria-hidden="true" class="catalog-search-icon"><svg fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="21"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg></span><input aria-controls="catalog-hikvision catalog-samsung catalog-zelt" autocomplete="off" id="catalog-search" maxlength="150" placeholder="Cari Smart Board, merek, ukuran, atau model..." type="search"/><button aria-label="Hapus pencarian" class="catalog-search-clear" hidden="" id="catalog-search-clear" type="button">×</button></div>
+<p aria-live="polite" class="catalog-result-count" role="status"><strong id="catalog-visible-count">27</strong> produk ditampilkan</p>
+<div class="catalog-filter-controls">
+<div class="catalog-filter-field">
+<span class="brand-series-filter-label" id="catalog-brand-label">Merek</span>
+<div class="brand-series-filter catalog-filter" data-filter="brand" data-value="all">
+<button aria-expanded="false" aria-haspopup="menu" aria-labelledby="catalog-brand-label catalog-brand-current" class="brand-series-trigger" type="button">
+<span class="brand-series-current" id="catalog-brand-current">Semua merek</span>
+<span aria-hidden="true" class="brand-series-chevron"></span>
+</button>
+<div aria-labelledby="catalog-brand-label" class="brand-series-menu" hidden="" role="menu">
+<button aria-checked="true" class="brand-series-option" data-value="all" role="menuitemradio" type="button">Semua merek</button>
+<button aria-checked="false" class="brand-series-option" data-value="hikvision" role="menuitemradio" type="button">Hikvision</button>
+<button aria-checked="false" class="brand-series-option" data-value="samsung" role="menuitemradio" type="button">Samsung</button>
+<button aria-checked="false" class="brand-series-option" data-value="zelt" role="menuitemradio" type="button">ZELT</button>
+</div>
+</div>
+</div>
+<div class="catalog-filter-field">
+<span class="brand-series-filter-label" id="catalog-series-label">Seri</span>
+<div class="brand-series-filter catalog-filter" data-filter="series" data-value="all">
+<button aria-expanded="false" aria-haspopup="menu" aria-labelledby="catalog-series-label catalog-series-current" class="brand-series-trigger" type="button">
+<span class="brand-series-current" id="catalog-series-current">Semua seri</span>
+<span aria-hidden="true" class="brand-series-chevron"></span>
+</button>
+<div aria-labelledby="catalog-series-label" class="brand-series-menu" hidden="" role="menu">
+<button aria-checked="true" class="brand-series-option" data-value="all" role="menuitemradio" type="button">Semua seri</button>
+</div>
+</div>
+</div>
+<div class="catalog-filter-field catalog-size-field"><label class="brand-series-filter-label" for="catalog-size">Ukuran</label><select class="catalog-size-select" id="catalog-size"><option value="all">Semua Ukuran</option></select></div><button class="catalog-reset" id="catalog-reset" type="button">Reset Filter</button></div>
+</div>
+<section class="catalog-brand" data-brand="hikvision" id="catalog-hikvision">
+<div class="catalog-brand-heading">
+<div>
+<span class="section-kicker">Hikvision · 9 produk</span>
+<h2>Smart Board Hikvision</h2>
+<p>Perangkat interaktif untuk ruang kelas, pelatihan, dan ruang rapat.</p>
+</div>
+<a class="catalog-brand-link" href="produk-hikvision.html">Lihat halaman Hikvision <span aria-hidden="true">↗</span></a>
+</div>
+<section class="catalog-series-group" data-series="hikvision-ultra">
+<div class="catalog-series-heading">
+<h3>Smart Board Hikvision Ultra Series</h3>
+<p>Smart Board Hikvision Ultra Series tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung pembelajaran interaktif, presentasi, dan meeting.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5c65rba" data-product-search="hikvision ds-d5c65rb/a ultra series hikvision smart board hikvision 65 inch smart board hikvision ultra series 65 inch untuk ruang kelas dan meeting room berukuran kecil hingga menengah." data-product-size="65">
+<div class="brand-model-image"><img alt="Hikvision DS-D5C65RB/A" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5C65RB/A</h3>
+<span class="catalog-product-meta">Hikvision · 65 Inch</span><h3>Hikvision DS-D5C65RB/A</h3>
 <p>Smart Board Hikvision Ultra Series 65 inch untuk ruang kelas dan meeting room berukuran kecil hingga menengah.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5c65rba">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5c65rba.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5C75RB/A" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5c75rba" data-product-search="hikvision ds-d5c75rb/a ultra series hikvision smart board hikvision 75 inch smart board hikvision ultra series 75 inch untuk presentasi dan kolaborasi tim sehari-hari." data-product-size="75">
+<div class="brand-model-image"><img alt="Hikvision DS-D5C75RB/A" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5C75RB/A</h3>
+<span class="catalog-product-meta">Hikvision · 75 Inch</span><h3>Hikvision DS-D5C75RB/A</h3>
 <p>Smart Board Hikvision Ultra Series 75 inch untuk presentasi dan kolaborasi tim sehari-hari.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5c75rba">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5c75rba.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5C86RB/A" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5c86rba" data-product-search="hikvision ds-d5c86rb/a ultra series hikvision smart board hikvision 86 inch smart board hikvision ultra series 86 inch dengan layar luas untuk ruang meeting dan training berkapasitas besar." data-product-size="86">
+<div class="brand-model-image"><img alt="Hikvision DS-D5C86RB/A" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5C86RB/A</h3>
+<span class="catalog-product-meta">Hikvision · 86 Inch</span><h3>Hikvision DS-D5C86RB/A</h3>
 <p>Smart Board Hikvision Ultra Series 86 inch dengan layar luas untuk ruang meeting dan training berkapasitas besar.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5c86rba">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5c86rba.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="hikvision-performance">
-          <div class="catalog-series-heading">
-            <h3>Smart Board Hikvision Performance Series</h3>
-            <p>Smart Board Hikvision Performance Series tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung presentasi, meeting, dan kolaborasi di ruang kerja modern.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5B65RB/EP" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="hikvision-performance">
+<div class="catalog-series-heading">
+<h3>Smart Board Hikvision Performance Series</h3>
+<p>Smart Board Hikvision Performance Series tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung presentasi, meeting, dan kolaborasi di ruang kerja modern.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5b65rbep" data-product-search="hikvision ds-d5b65rb/ep performance series hikvision smart board hikvision 65 inch smart board hikvision performance series 65 inch untuk ruang kelas dan ruang kerja berukuran kecil hingga menengah." data-product-size="65">
+<div class="brand-model-image"><img alt="Hikvision DS-D5B65RB/EP" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5B65RB/EP</h3>
+<span class="catalog-product-meta">Hikvision · 65 Inch</span><h3>Hikvision DS-D5B65RB/EP</h3>
 <p>Smart Board Hikvision Performance Series 65 inch untuk ruang kelas dan ruang kerja berukuran kecil hingga menengah.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5b65rbep">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5b65rbep.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5B75RB/EP" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5b75rbep" data-product-search="hikvision ds-d5b75rb/ep performance series hikvision smart board hikvision 75 inch smart board hikvision performance series 75 inch untuk mendukung presentasi dan pembelajaran interaktif." data-product-size="75">
+<div class="brand-model-image"><img alt="Hikvision DS-D5B75RB/EP" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5B75RB/EP</h3>
+<span class="catalog-product-meta">Hikvision · 75 Inch</span><h3>Hikvision DS-D5B75RB/EP</h3>
 <p>Smart Board Hikvision Performance Series 75 inch untuk mendukung presentasi dan pembelajaran interaktif.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5b75rbep">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5b75rbep.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Hikvision DS-D5B86RB/EP" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5b86rbep" data-product-search="hikvision ds-d5b86rb/ep performance series hikvision smart board hikvision 86 inch smart board hikvision performance series 86 inch untuk ruang meeting dan training berkapasitas besar." data-product-size="86">
+<div class="brand-model-image"><img alt="Hikvision DS-D5B86RB/EP" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Hikvision DS-D5B65RB-EP.webp" width="400"/></div>
 <div class="card-body">
-<h3>Hikvision DS-D5B86RB/EP</h3>
+<span class="catalog-product-meta">Hikvision · 86 Inch</span><h3>Hikvision DS-D5B86RB/EP</h3>
 <p>Smart Board Hikvision Performance Series 86 inch untuk ruang meeting dan training berkapasitas besar.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5b86rbep">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5b86rbep.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="accessories">
-          <div class="catalog-series-heading">
-            <h3>Aksesoris Hikvision</h3>
-            <p>Lengkapi penggunaan Smart Board Hikvision dengan aksesoris pendukung untuk kebutuhan konektivitas, mobilitas, dan pengoperasian.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Active Dongle DS-D5SC3B-B" loading="lazy" src="../assets/images/products/hikvision/Active Dongle DS-D5SC3B-B.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="accessories">
+<div class="catalog-series-heading">
+<h3>Aksesoris Hikvision</h3>
+<p>Lengkapi penggunaan Smart Board Hikvision dengan aksesoris pendukung untuk kebutuhan konektivitas, mobilitas, dan pengoperasian.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5sc3b-b" data-product-search="active dongle ds-d5sc3b-b accessories hikvision aksesoris hikvision aksesoris dongle nirkabel untuk menghubungkan laptop ke smart board hikvision secara instan tanpa kabel." data-product-size="">
+<div class="brand-model-image"><img alt="Active Dongle DS-D5SC3B-B" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Active Dongle DS-D5SC3B-B.webp" width="400"/></div>
 <div class="card-body">
-<h3>Active Dongle DS-D5SC3B-B</h3>
+<span class="catalog-product-meta">Hikvision · Aksesoris</span><h3>Active Dongle DS-D5SC3B-B</h3>
 <p>Dongle nirkabel untuk menghubungkan laptop ke Smart Board Hikvision secara instan tanpa kabel.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5sc3b-b">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5sc3b-b.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="Mobile Bracket DS-D5ABKY3-SL" loading="lazy" src="../assets/images/products/hikvision/Mobile Bracket DS-D5ABKY3-SL.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5abky3-sl" data-product-search="mobile bracket ds-d5abky3-sl accessories hikvision aksesoris hikvision aksesoris bracket mobile beroda untuk memudahkan pemindahan smart board hikvision antar ruangan." data-product-size="">
+<div class="brand-model-image"><img alt="Mobile Bracket DS-D5ABKY3-SL" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/Mobile Bracket DS-D5ABKY3-SL.webp" width="400"/></div>
 <div class="card-body">
-<h3>Mobile Bracket DS-D5ABKY3-SL</h3>
+<span class="catalog-product-meta">Hikvision · Aksesoris</span><h3>Mobile Bracket DS-D5ABKY3-SL</h3>
 <p>Bracket mobile beroda untuk memudahkan pemindahan Smart Board Hikvision antar ruangan.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5abky3-sl">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5abky3-sl.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="hikvision">
-<div class="brand-model-image"><img alt="OPS Module DS-D5AC12G5-8S2" loading="lazy" src="../assets/images/products/hikvision/OPS Module DS-D5AC12G5-8S2.webp"/></div>
+<article class="card brand-model-card" data-product-brand="hikvision" data-product-id="hikvision-ds-d5ac12g5-8s2" data-product-search="ops module ds-d5ac12g5-8s2 accessories hikvision aksesoris hikvision aksesoris modul pc tambahan yang terpasang pada smart board hikvision untuk mendukung penggunaan aplikasi secara langsung." data-product-size="">
+<div class="brand-model-image"><img alt="OPS Module DS-D5AC12G5-8S2" decoding="async" height="280" loading="lazy" src="../assets/images/products/hikvision/OPS Module DS-D5AC12G5-8S2.webp" width="400"/></div>
 <div class="card-body">
-<h3>OPS Module DS-D5AC12G5-8S2</h3>
+<span class="catalog-product-meta">Hikvision · Aksesoris</span><h3>OPS Module DS-D5AC12G5-8S2</h3>
 <p>Modul PC tambahan yang terpasang pada Smart Board Hikvision untuk mendukung penggunaan aplikasi secara langsung.</p>
-<a class="btn btn-outline" href="product-detail.html?id=hikvision-ds-d5ac12g5-8s2">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-hikvision-ds-d5ac12g5-8s2.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-      </section>
-      <section class="catalog-brand" data-brand="samsung" id="catalog-samsung">
-        <div class="catalog-brand-heading">
-          <div>
-            <span class="section-kicker">Samsung · 9 produk</span>
-            <h2>Smart Board Samsung</h2>
-            <p>Layar kolaborasi Samsung untuk pembelajaran dan presentasi.</p>
-          </div>
-          <a href="produk-samsung.html" class="catalog-brand-link">Lihat halaman Samsung <span aria-hidden="true">↗</span></a>
-        </div>
-        <section class="catalog-series-group" data-series="samsung-wmb">
-          <div class="catalog-series-heading">
-            <h3>Smart Board Samsung Flip WMB</h3>
-            <p>Samsung Flip WMB tersedia dalam pilihan ukuran 55 hingga 75 inch untuk mendukung pembelajaran interaktif, presentasi, dan meeting.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WM55B" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp"/></div>
+</div>
+</section>
+</section>
+<section class="catalog-brand" data-brand="samsung" id="catalog-samsung">
+<div class="catalog-brand-heading">
+<div>
+<span class="section-kicker">Samsung · 9 produk</span>
+<h2>Smart Board Samsung</h2>
+<p>Layar kolaborasi Samsung untuk pembelajaran dan presentasi.</p>
+</div>
+<a class="catalog-brand-link" href="produk-samsung.html">Lihat halaman Samsung <span aria-hidden="true">↗</span></a>
+</div>
+<section class="catalog-series-group" data-series="samsung-wmb">
+<div class="catalog-series-heading">
+<h3>Smart Board Samsung Flip WMB</h3>
+<p>Samsung Flip WMB tersedia dalam pilihan ukuran 55 hingga 75 inch untuk mendukung pembelajaran interaktif, presentasi, dan meeting.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wm55b" data-product-search="samsung flip wm55b samsung wmb samsung smart board samsung 55 inch smart board samsung flip 55 inch yang cocok untuk ruang meeting dan ruang kerja berukuran kecil." data-product-size="55">
+<div class="brand-model-image"><img alt="Samsung Flip WM55B" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WM55B</h3>
+<span class="catalog-product-meta">Samsung · 55 Inch</span><h3>Samsung Flip WM55B</h3>
 <p>Smart Board Samsung Flip 55 inch yang cocok untuk ruang meeting dan ruang kerja berukuran kecil.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wm55b">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wm55b.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WM65B" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wm65b" data-product-search="samsung flip wm65b samsung wmb samsung smart board samsung 65 inch smart board samsung flip 65 inch untuk mendukung presentasi dan kolaborasi tim sehari-hari." data-product-size="65">
+<div class="brand-model-image"><img alt="Samsung Flip WM65B" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WM65B</h3>
+<span class="catalog-product-meta">Samsung · 65 Inch</span><h3>Samsung Flip WM65B</h3>
 <p>Smart Board Samsung Flip 65 inch untuk mendukung presentasi dan kolaborasi tim sehari-hari.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wm65b">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wm65b.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WM75B" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wm75b" data-product-search="samsung flip wm75b samsung wmb samsung smart board samsung 75 inch smart board samsung flip 75 inch dengan layar lebih luas untuk ruang meeting dan training." data-product-size="75">
+<div class="brand-model-image"><img alt="Samsung Flip WM75B" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WM55B.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WM75B</h3>
+<span class="catalog-product-meta">Samsung · 75 Inch</span><h3>Samsung Flip WM75B</h3>
 <p>Smart Board Samsung Flip 75 inch dengan layar lebih luas untuk ruang meeting dan training.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wm75b">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wm75b.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="samsung-wad">
-          <div class="catalog-series-heading">
-            <h3>Smart Board Samsung WAD</h3>
-            <p>Smart Board Samsung WAD tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung presentasi, meeting, dan kolaborasi di ruang kerja modern.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WA65D" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="samsung-wad">
+<div class="catalog-series-heading">
+<h3>Smart Board Samsung WAD</h3>
+<p>Smart Board Samsung WAD tersedia dalam pilihan ukuran 65 hingga 86 inch untuk mendukung presentasi, meeting, dan kolaborasi di ruang kerja modern.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wa65d" data-product-search="samsung flip wa65d samsung wad samsung smart board samsung 65 inch smart board samsung flip 65 inch untuk kebutuhan presentasi dan kolaborasi ruang kerja modern." data-product-size="65">
+<div class="brand-model-image"><img alt="Samsung Flip WA65D" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WA65D</h3>
+<span class="catalog-product-meta">Samsung · 65 Inch</span><h3>Samsung Flip WA65D</h3>
 <p>Smart Board Samsung Flip 65 inch untuk kebutuhan presentasi dan kolaborasi ruang kerja modern.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wa65d">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wa65d.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WA75D" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wa75d" data-product-search="samsung flip wa75d samsung wad samsung smart board samsung 75 inch smart board samsung flip 75 inch dengan tampilan lebih luas untuk ruang meeting dan training." data-product-size="75">
+<div class="brand-model-image"><img alt="Samsung Flip WA75D" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WA75D</h3>
+<span class="catalog-product-meta">Samsung · 75 Inch</span><h3>Samsung Flip WA75D</h3>
 <p>Smart Board Samsung Flip 75 inch dengan tampilan lebih luas untuk ruang meeting dan training.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wa75d">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wa75d.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Samsung Flip WA86D" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wa86d" data-product-search="samsung flip wa86d samsung wad samsung smart board samsung 86 inch smart board samsung flip 86 inch untuk ruang meeting dan training berkapasitas besar." data-product-size="86">
+<div class="brand-model-image"><img alt="Samsung Flip WA86D" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Samsung Flip WA65D.webp" width="400"/></div>
 <div class="card-body">
-<h3>Samsung Flip WA86D</h3>
+<span class="catalog-product-meta">Samsung · 86 Inch</span><h3>Samsung Flip WA86D</h3>
 <p>Smart Board Samsung Flip 86 inch untuk ruang meeting dan training berkapasitas besar.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wa86d">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wa86d.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="accessories">
-          <div class="catalog-series-heading">
-            <h3>Aksesoris Samsung</h3>
-            <p>Lengkapi penggunaan Smart Board Samsung dengan aksesoris pendukung untuk kebutuhan pemasangan, mobilitas, dan pengoperasian.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Wall Mount Samsung" loading="lazy" src="../assets/images/products/samsung/Wall Mount Samsung.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="accessories">
+<div class="catalog-series-heading">
+<h3>Aksesoris Samsung</h3>
+<p>Lengkapi penggunaan Smart Board Samsung dengan aksesoris pendukung untuk kebutuhan pemasangan, mobilitas, dan pengoperasian.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-wall-mount" data-product-search="wall mount samsung accessories samsung aksesoris samsung aksesoris bracket dinding untuk pemasangan smart board samsung secara permanen dan stabil." data-product-size="">
+<div class="brand-model-image"><img alt="Wall Mount Samsung" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Wall Mount Samsung.webp" width="400"/></div>
 <div class="card-body">
-<h3>Wall Mount Samsung</h3>
+<span class="catalog-product-meta">Samsung · Aksesoris</span><h3>Wall Mount Samsung</h3>
 <p>Bracket dinding untuk pemasangan Smart Board Samsung secara permanen dan stabil.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-wall-mount">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-wall-mount.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="Mobile Stand Samsung" loading="lazy" src="../assets/images/products/samsung/Mobile Stand Samsung.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-mobile-stand" data-product-search="mobile stand samsung accessories samsung aksesoris samsung aksesoris stand mobile beroda untuk memudahkan pemindahan smart board samsung antar ruangan." data-product-size="">
+<div class="brand-model-image"><img alt="Mobile Stand Samsung" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/Mobile Stand Samsung.webp" width="400"/></div>
 <div class="card-body">
-<h3>Mobile Stand Samsung</h3>
+<span class="catalog-product-meta">Samsung · Aksesoris</span><h3>Mobile Stand Samsung</h3>
 <p>Stand mobile beroda untuk memudahkan pemindahan Smart Board Samsung antar ruangan.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-mobile-stand">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-mobile-stand.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="samsung">
-<div class="brand-model-image"><img alt="OPS PC Samsung" loading="lazy" src="../assets/images/products/samsung/OPS PC Samsung.webp"/></div>
+<article class="card brand-model-card" data-product-brand="samsung" data-product-id="samsung-ops-pc" data-product-search="ops pc samsung accessories samsung aksesoris samsung aksesoris modul pc tambahan yang terpasang pada smart board samsung untuk mendukung penggunaan aplikasi secara langsung." data-product-size="">
+<div class="brand-model-image"><img alt="OPS PC Samsung" decoding="async" height="280" loading="lazy" src="../assets/images/products/samsung/OPS PC Samsung.webp" width="400"/></div>
 <div class="card-body">
-<h3>OPS PC Samsung</h3>
+<span class="catalog-product-meta">Samsung · Aksesoris</span><h3>OPS PC Samsung</h3>
 <p>Modul PC tambahan yang terpasang pada Smart Board Samsung untuk mendukung penggunaan aplikasi secara langsung.</p>
-<a class="btn btn-outline" href="product-detail.html?id=samsung-ops-pc">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-samsung-ops-pc.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-      </section>
-      <section class="catalog-brand" data-brand="zelt" id="catalog-zelt">
-        <div class="catalog-brand-heading">
-          <div>
-            <span class="section-kicker">ZELT · 9 produk</span>
-            <h2>Smart Board ZELT</h2>
-            <p>Smart Board untuk kegiatan belajar dan kerja sehari-hari.</p>
-          </div>
-          <a href="produk-zelt.html" class="catalog-brand-link">Lihat halaman ZELT <span aria-hidden="true">↗</span></a>
-        </div>
-        <section class="catalog-series-group" data-series="zelt-pro">
-          <div class="catalog-series-heading">
-            <h3>Smart Board ZELT Pro</h3>
-            <p>Smart Board ZELT Pro tersedia dalam pilihan ukuran 65 hingga 85 inch untuk mendukung pembelajaran interaktif, presentasi, meeting, training, hingga kebutuhan ruang berkapasitas besar.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Pro 65 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+</div>
+</section>
+</section>
+<section class="catalog-brand" data-brand="zelt" id="catalog-zelt">
+<div class="catalog-brand-heading">
+<div>
+<span class="section-kicker">ZELT · 9 produk</span>
+<h2>Smart Board ZELT</h2>
+<p>Smart Board untuk kegiatan belajar dan kerja sehari-hari.</p>
+</div>
+<a class="catalog-brand-link" href="produk-zelt.html">Lihat halaman ZELT <span aria-hidden="true">↗</span></a>
+</div>
+<section class="catalog-series-group" data-series="zelt-pro">
+<div class="catalog-series-heading">
+<h3>Smart Board ZELT Pro</h3>
+<p>Smart Board ZELT Pro tersedia dalam pilihan ukuran 65 hingga 85 inch untuk mendukung pembelajaran interaktif, presentasi, meeting, training, hingga kebutuhan ruang berkapasitas besar.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-pro-65" data-product-search="zelt pro 65 inch zelt pro zelt smart board zelt 65 inch smart board 65 inch yang cocok untuk ruang kelas, meeting room, dan ruang kerja berukuran kecil hingga menengah." data-product-size="65">
+<div class="brand-model-image"><img alt="ZELT Pro 65 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Pro 65 Inch</h3>
+<span class="catalog-product-meta">ZELT · 65 Inch</span><h3>ZELT Pro 65 Inch</h3>
 <p>Smart Board 65 inch yang cocok untuk ruang kelas, meeting room, dan ruang kerja berukuran kecil hingga menengah.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-pro-65">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-pro-65.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Pro 75 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-pro-75" data-product-search="zelt pro 75 inch zelt pro zelt smart board zelt 75 inch smart board 75 inch untuk mendukung pembelajaran interaktif, presentasi, dan kolaborasi sehari-hari." data-product-size="75">
+<div class="brand-model-image"><img alt="ZELT Pro 75 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Pro 75 Inch</h3>
+<span class="catalog-product-meta">ZELT · 75 Inch</span><h3>ZELT Pro 75 Inch</h3>
 <p>Smart Board 75 inch untuk mendukung pembelajaran interaktif, presentasi, dan kolaborasi sehari-hari.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-pro-75">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-pro-75.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Pro 85 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-pro-85" data-product-search="zelt pro 85 inch zelt pro zelt smart board zelt 85 inch smart board 85 inch dengan layar lebih luas untuk ruang kelas dan meeting berukuran menengah." data-product-size="85">
+<div class="brand-model-image"><img alt="ZELT Pro 85 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Pro 85 Inch</h3>
+<span class="catalog-product-meta">ZELT · 85 Inch</span><h3>ZELT Pro 85 Inch</h3>
 <p>Smart Board 85 inch dengan layar lebih luas untuk ruang kelas dan meeting berukuran menengah.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-pro-85">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-pro-85.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="zelt-lite">
-          <div class="catalog-series-heading">
-            <h3>Smart Board ZELT Lite</h3>
-            <p>Pilihan ZELT Lite untuk kebutuhan display interaktif yang praktis di ruang kelas, meeting, dan presentasi.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Lite 65 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="zelt-lite">
+<div class="catalog-series-heading">
+<h3>Smart Board ZELT Lite</h3>
+<p>Pilihan ZELT Lite untuk kebutuhan display interaktif yang praktis di ruang kelas, meeting, dan presentasi.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-lite-65" data-product-search="zelt lite 65 inch zelt lite zelt smart board zelt 65 inch smart board zelt lite 65 inch untuk kebutuhan pembelajaran dan presentasi sehari-hari." data-product-size="65">
+<div class="brand-model-image"><img alt="ZELT Lite 65 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Lite 65 Inch</h3>
+<span class="catalog-product-meta">ZELT · 65 Inch</span><h3>ZELT Lite 65 Inch</h3>
 <p>Smart Board ZELT Lite 65 inch untuk kebutuhan pembelajaran dan presentasi sehari-hari.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-lite-65">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-lite-65.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Lite 75 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-lite-75" data-product-search="zelt lite 75 inch zelt lite zelt smart board zelt 75 inch smart board zelt lite 75 inch untuk ruang kelas, meeting, dan presentasi." data-product-size="75">
+<div class="brand-model-image"><img alt="ZELT Lite 75 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Lite 75 Inch</h3>
+<span class="catalog-product-meta">ZELT · 75 Inch</span><h3>ZELT Lite 75 Inch</h3>
 <p>Smart Board ZELT Lite 75 inch untuk ruang kelas, meeting, dan presentasi.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-lite-75">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-lite-75.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="ZELT Lite 86 Inch" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-lite-86" data-product-search="zelt lite 86 inch zelt lite zelt smart board zelt 86 inch smart board zelt lite 86 inch untuk ruang dengan kebutuhan tampilan lebih luas." data-product-size="86">
+<div class="brand-model-image"><img alt="ZELT Lite 86 Inch" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/zelt-pro.webp" width="400"/></div>
 <div class="card-body">
-<h3>ZELT Lite 86 Inch</h3>
+<span class="catalog-product-meta">ZELT · 86 Inch</span><h3>ZELT Lite 86 Inch</h3>
 <p>Smart Board ZELT Lite 86 inch untuk ruang dengan kebutuhan tampilan lebih luas.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-lite-86">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-lite-86.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-        <section class="catalog-series-group" data-series="accessories">
-          <div class="catalog-series-heading">
-            <h3>Aksesoris Smart Board ZELT</h3>
-            <p>Lengkapi penggunaan Smart Board ZELT dengan aksesoris pendukung untuk kebutuhan mobilitas, konektivitas, dan pengoperasian.</p>
-          </div>
-          <div class="grid brand-product-grid catalog-product-grid">
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="Standing Smart Board ZELT" loading="lazy" src="../assets/images/products/zelt/Standing Smart Board ZELT.webp"/></div>
+</div>
+</section>
+<section class="catalog-series-group" data-series="accessories">
+<div class="catalog-series-heading">
+<h3>Aksesoris Smart Board ZELT</h3>
+<p>Lengkapi penggunaan Smart Board ZELT dengan aksesoris pendukung untuk kebutuhan mobilitas, konektivitas, dan pengoperasian.</p>
+</div>
+<div class="grid brand-product-grid catalog-product-grid">
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-standing" data-product-search="standing smart board zelt accessories zelt aksesoris zelt aksesoris stand mobile beroda untuk memudahkan pemindahan smart board zelt antar ruangan sesuai kebutuhan." data-product-size="">
+<div class="brand-model-image"><img alt="Standing Smart Board ZELT" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/Standing Smart Board ZELT.webp" width="400"/></div>
 <div class="card-body">
-<h3>Standing Smart Board ZELT</h3>
+<span class="catalog-product-meta">ZELT · Aksesoris</span><h3>Standing Smart Board ZELT</h3>
 <p>Stand mobile beroda untuk memudahkan pemindahan Smart Board ZELT antar ruangan sesuai kebutuhan.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-standing">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-standing.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="Active Dongle USB" loading="lazy" src="../assets/images/products/zelt/Active Dongle USB.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-active-dongle" data-product-search="active dongle usb accessories zelt aksesoris zelt aksesoris perangkat pendukung untuk menghubungkan laptop ke smart board secara nirkabel untuk presentasi dan screen sharing." data-product-size="">
+<div class="brand-model-image"><img alt="Active Dongle USB" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/Active Dongle USB.webp" width="400"/></div>
 <div class="card-body">
-<h3>Active Dongle USB</h3>
+<span class="catalog-product-meta">ZELT · Aksesoris</span><h3>Active Dongle USB</h3>
 <p>Perangkat pendukung untuk menghubungkan laptop ke Smart Board secara nirkabel untuk presentasi dan screen sharing.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-active-dongle">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-active-dongle.html">Lihat Detail →</a>
 </div>
 </article>
-          <article class="card brand-model-card" data-product-brand="zelt">
-<div class="brand-model-image"><img alt="Active OPS" loading="lazy" src="../assets/images/products/zelt/Active OPS.webp"/></div>
+<article class="card brand-model-card" data-product-brand="zelt" data-product-id="zelt-active-ops" data-product-search="active ops accessories zelt aksesoris zelt aksesoris modul pc tambahan yang terpasang pada smart board untuk mendukung penggunaan aplikasi dan sistem operasi secara langsung." data-product-size="">
+<div class="brand-model-image"><img alt="Active OPS" decoding="async" height="280" loading="lazy" src="../assets/images/products/zelt/Active OPS.webp" width="400"/></div>
 <div class="card-body">
-<h3>Active OPS</h3>
+<span class="catalog-product-meta">ZELT · Aksesoris</span><h3>Active OPS</h3>
 <p>Modul PC tambahan yang terpasang pada Smart Board untuk mendukung penggunaan aplikasi dan sistem operasi secara langsung.</p>
-<a class="btn btn-outline" href="product-detail.html?id=zelt-active-ops">Lihat Detail →</a>
+<a class="btn btn-outline" href="produk-zelt-active-ops.html">Lihat Detail →</a>
 </div>
 </article>
-          </div>
-        </section>
-      </section>
-          <p class="catalog-empty" id="catalog-empty" hidden>Tidak ada produk untuk filter tersebut. Silakan pilih merek atau seri lainnya.</p>
-        </div>
-      </section>
-    </main>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer" id="kontak">
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <h4>Jual Smart Board Jakarta</h4>
-            <p>Penyedia Smart Board dan interactive display untuk sekolah, kantor, dan instansi di Jakarta.</p>
-          </div>
-          <div>
-            <h4>Navigasi</h4>
-            <ul>
-              <li><a href="../index.html">Beranda</a></li>
-              <li><a href="produk.html">Produk</a></li>
-              <li><a href="portofolio.html">Portofolio</a></li>
-              <li><a href="artikel.html">Artikel</a></li>
-              <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Produk</h4>
-            <ul>
-              <li>Smart Board</li>
-              <li>Interactive Flat Panel</li>
-              <li>Digital Signage</li>
-              <li>Aksesoris</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Kontak</h4>
-            <ul>
-              <li>WhatsApp: +62 811-3791-1115</li>
-              <li>Email: info@jualsmartboardjakarta.id</li>
-              <li>Alamat: Jakarta, Indonesia</li>
-            </ul>
-          </div>
-        </div>
-        <p class="copy">© 2026 Jual Smart Board Jakarta. All Rights Reserved.</p>
-      </div>
-    </footer>
-
-    <button id="back-to-top" aria-label="Kembali ke atas">↑</button>
-
-    <!-- Script (urutan penting: products.js harus paling awal, main.js paling akhir) -->
-    <script src="../assets/js/nav-history.js"></script>
-    <script src="../assets/js/portfolio.js"></script>
-    <script src="../assets/js/hero-slider.js"></script>
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/animation.js"></script>
-    <script src="../assets/js/modal.js"></script>
-    <script src="../assets/js/faq.js"></script>
-    <script src="../assets/js/back-to-top.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/all-products.js"></script>
-  </body>
+</div>
+</section>
+</section>
+<p class="catalog-empty" hidden="" id="catalog-empty">Tidak ada produk yang cocok. Coba kata kunci lain atau klik Reset Filter.</p>
+</div>
+</section>
+</main>
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="kontak">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>Jual Smart Board Jakarta</h4>
+<p>Penyedia Smart Board dan interactive display untuk sekolah, kantor, dan instansi di Jakarta.</p>
+</div>
+<div>
+<h4>Navigasi</h4>
+<ul>
+<li><a href="../index.html">Beranda</a></li>
+<li><a href="produk.html">Produk</a></li>
+<li><a href="portofolio.html">Portofolio</a></li>
+<li><a href="artikel.html">Artikel</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+</div>
+<div>
+<h4>Produk</h4>
+<ul><li><a href="produk.html">Semua Produk</a></li><li><a href="produk-hikvision.html">Smart Board Hikvision</a></li><li><a href="produk-samsung.html">Smart Board Samsung</a></li><li><a href="produk-zelt.html">Smart Board ZELT</a></li><li><a href="artikel.html">Artikel</a></li></ul>
+</div>
+<div>
+<h4>Kontak</h4>
+<ul><li><a href="https://wa.me/6281137911115">WhatsApp: +62 811-3791-1115</a></li><li><a href="mailto:info@jualsmartboardjakarta.id">Email: info@jualsmartboardjakarta.id</a></li><li>Area layanan: Jakarta, Indonesia</li></ul>
+</div>
+</div>
+<p class="copy">© 2026 Jual Smart Board Jakarta. All Rights Reserved.</p>
+</div>
+</footer>
+<button aria-label="Kembali ke atas" id="back-to-top">↑</button>
+<!-- Script (urutan penting: products.js harus paling awal, main.js paling akhir) -->
+<script src="../assets/js/nav-history.js"></script>
+<script src="../assets/js/portfolio.js"></script>
+<script src="../assets/js/hero-slider.js"></script>
+<script src="../assets/js/navbar.js"></script>
+<script src="../assets/js/animation.js"></script>
+<script src="../assets/js/modal.js"></script>
+<script src="../assets/js/faq.js"></script>
+<script src="../assets/js/back-to-top.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/all-products.js"></script>
+</body>
 </html>
