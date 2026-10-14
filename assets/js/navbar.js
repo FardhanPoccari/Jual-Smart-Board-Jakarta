@@ -17,6 +17,24 @@ function initNavbar() {
   onScroll();
   addEventListener("scroll", onScroll, { passive: true });
 
+  let openedByHover = false;
+  const setDropdown = open => {
+    dropdown?.classList.toggle("open", open);
+    dropdownToggle?.setAttribute("aria-expanded", String(open));
+    if (!open) openedByHover = false;
+  };
+  const desktopHover = window.matchMedia("(min-width: 993px) and (hover: hover)");
+  dropdown?.addEventListener("mouseenter", () => {
+    if (desktopHover.matches && !dropdown.classList.contains("open")) {
+      openedByHover = true;
+      setDropdown(true);
+    }
+  });
+  dropdown?.addEventListener("mouseleave", () => {
+    if (openedByHover) setDropdown(false);
+  });
+  desktopHover.addEventListener("change", () => setDropdown(false));
+
   hamburger?.addEventListener("click", e => {
     const open = links.classList.toggle("open");
     e.currentTarget.setAttribute("aria-expanded", open);
@@ -24,29 +42,27 @@ function initNavbar() {
 
   dropdownToggle?.addEventListener("click", e => {
     e.stopPropagation();
-    const open = dropdown.classList.toggle("open");
-    dropdownToggle.setAttribute("aria-expanded", open);
+    const open = openedByHover || !dropdown.classList.contains("open");
+    openedByHover = false;
+    setDropdown(open);
   });
 
   links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
     links.classList.remove("open");
     hamburger?.setAttribute("aria-expanded", "false");
-    dropdown?.classList.remove("open");
-    dropdownToggle?.setAttribute("aria-expanded", "false");
+    setDropdown(false);
   }));
 
   document.addEventListener("click", e => {
     if (dropdown && !dropdown.contains(e.target)) {
-      dropdown.classList.remove("open");
-      dropdownToggle?.setAttribute("aria-expanded", "false");
+      setDropdown(false);
     }
   });
 
   document.addEventListener("keydown", e => {
     if (e.key !== "Escape") return;
     if (dropdown?.classList.contains("open")) {
-      dropdown.classList.remove("open");
-      dropdownToggle?.setAttribute("aria-expanded", "false");
+      setDropdown(false);
       dropdownToggle?.focus();
     } else if (links.classList.contains("open")) {
       links.classList.remove("open");

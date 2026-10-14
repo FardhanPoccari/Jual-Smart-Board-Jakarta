@@ -1,7 +1,8 @@
 /* Galeri referensi Smart Board: editorial, foto lebar dan teks jelas. */
 .portfolio-section { padding-top: 42px; }
 .portfolio-intro { max-width: 720px; color: var(--text-muted); margin: 0 0 26px; font-size: .97rem; }
-.portfolio-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+.portfolio-filters { display: none; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+.portfolio-section[data-portfolio-ready="true"] .portfolio-filters { display: flex; }
 .portfolio-filter { border: 1px solid #d5e1f1; border-radius: 999px; background: #fff; color: #405873; padding: 10px 18px; font: inherit; font-size: .91rem; font-weight: 650; cursor: pointer; transition: .2s ease; }
 .portfolio-filter:hover,.portfolio-filter.active { background: var(--primary-dark); color: white; border-color: var(--primary-dark); }
 .portfolio-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:28px; row-gap:45px; }

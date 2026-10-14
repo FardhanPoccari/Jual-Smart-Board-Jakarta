@@ -31,6 +31,7 @@ function renderPortfolio(el) {
     </article>`;
   el.innerHTML = PORTFOLIO.map(makeCard).join("");
   initPortfolioLightbox(el);
+  el.closest('.portfolio-section')?.setAttribute('data-portfolio-ready', 'true');
 
   const filters = document.querySelectorAll("[data-portfolio-filter]");
   filters.forEach(btn => {
