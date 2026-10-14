@@ -155,8 +155,9 @@ const GALLERY_SETS = {
 function gallerySetKey(p) {
   if (p.series === "Samsung WAD") return "samsung-wad";
   if (p.series === "Samsung WMB") return "samsung-wmb";
-  if (p.series === "Ultra Series") return "hikvision-ultra";
-  if (p.series === "Performance Series") return "hikvision-performance";
+  // Foto detail Hikvision yang tersedia berlabel model ini, bukan semua ukuran.
+  if (p.id === "hikvision-ds-d5c75rba") return "hikvision-ultra";
+  if (p.id === "hikvision-ds-d5b65rbep") return "hikvision-performance";
   if (p.series === "ZELT Pro" || p.series === "ZELT Lite") return "zelt";
   return null;
 }
@@ -190,33 +191,61 @@ const CHEVRON_R = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" s
 
 function galleryHTML(p) {
   const imgs = galleryImages(p);
+  const label = galleryProductLabel(p);
   const many = imgs.length > 1;
   const slides = imgs.map((f, i) => `
       <div class="gallery-slide${i === 0 ? " is-active" : ""}" data-index="${i}" aria-hidden="${i === 0 ? "false" : "true"}">
-        <img src="${imgPath(f)}" alt="${p.name} - gambar ${i + 1} dari ${imgs.length}" ${i === 0 ? "" : 'loading="lazy"'} draggable="false" ${imgFallback}>
+        <img src="${imgPath(f)}" alt="${label} — gambar ${i + 1} dari ${imgs.length}" ${i === 0 ? "" : 'loading="lazy"'} draggable="false" ${imgFallback}>
       </div>`).join("");
   const nav = many ? `
       <button class="gallery-nav gallery-prev" type="button" aria-label="Gambar sebelumnya">${CHEVRON_L}</button>
       <button class="gallery-nav gallery-next" type="button" aria-label="Gambar berikutnya">${CHEVRON_R}</button>` : "";
   const dots = many ? `
-    <div class="gallery-dots" role="tablist" aria-label="Pilih gambar">
-      ${imgs.map((_, i) => `<button class="gallery-dot${i === 0 ? " is-active" : ""}" type="button" role="tab" aria-selected="${i === 0}" aria-label="Gambar ${i + 1}" data-index="${i}"></button>`).join("")}
+    <div class="gallery-dots" role="group" aria-label="Pilih gambar">
+      ${imgs.map((_, i) => `<button class="gallery-dot${i === 0 ? " is-active" : ""}" type="button" aria-pressed="${i === 0}" aria-controls="product-gallery-stage" aria-label="${label} — tampilkan gambar ${i + 1} dari ${imgs.length}" data-index="${i}"></button>`).join("")}
     </div>` : "";
   return `
-    <div class="gallery${many ? "" : " is-single"}" data-gallery tabindex="0" aria-roledescription="carousel" aria-label="Galeri ${p.name}">
-      <div class="gallery-stage">${slides}${nav}</div>${dots}
+    <div class="gallery${many ? "" : " is-single"}" data-gallery tabindex="0" role="group" aria-roledescription="carousel" aria-label="Galeri ${label}">
+      <div class="gallery-stage" id="product-gallery-stage">${slides}${nav}</div>${dots}
     </div>`;
+}
+
+function galleryProductLabel(p) {
+  return `${p.name}${p.size ? ` — ${p.size} inch` : ""}`;
+}
+
+// Gambar seri yang sama tidak perlu diganti, tetapi nama aksesibelnya harus ikut varian.
+function updateGalleryProduct(root, p) {
+  if (!root) return;
+  const label = galleryProductLabel(p);
+  const images = [...root.querySelectorAll('.gallery-slide img')];
+  root.setAttribute('aria-label', `Galeri ${label}`);
+  images.forEach((img, i) => { img.alt = `${label} — gambar ${i + 1} dari ${images.length}`; });
+  root.querySelectorAll('.gallery-dot').forEach((button, i) => {
+    button.setAttribute('aria-label', `${label} — tampilkan gambar ${i + 1} dari ${images.length}`);
+  });
+  const status = root.querySelector('.gallery-status');
+  const active = root.querySelector('.gallery-slide.is-active');
+  if (status && active) status.textContent = `Gambar ${Number(active.dataset.index) + 1} dari ${images.length} — ${label}`;
 }
 
 /* Slide berputar: dari gambar terakhir, tombol berikutnya langsung kembali ke gambar pertama (dan sebaliknya). */
 function initGallery(root) {
-  if (!root) return;
+  if (!root || root.dataset.galleryReady === 'true') return;
   const slides = [...root.querySelectorAll(".gallery-slide")];
   const dots = [...root.querySelectorAll(".gallery-dot")];
   if (slides.length < 2) return;
+  root.dataset.galleryReady = 'true';
+  const stage = root.querySelector('.gallery-stage');
+  const status = document.createElement('p');
+  status.className = 'gallery-status';
+  status.setAttribute('aria-live', 'polite');
+  status.setAttribute('aria-atomic', 'true');
+  root.append(status);
+  dots.forEach(d => d.setAttribute('aria-controls', stage.id));
   let current = 0;
 
-  const go = n => {
+  const go = (n, preload = true) => {
     current = (n + slides.length) % slides.length;   // wrap-around
     slides.forEach((s, i) => {
       const on = i === current;
@@ -226,26 +255,35 @@ function initGallery(root) {
     dots.forEach((d, i) => {
       const on = i === current;
       d.classList.toggle("is-active", on);
-      d.setAttribute("aria-selected", on ? "true" : "false");
+      d.setAttribute("aria-pressed", String(on));
     });
+    status.textContent = `Gambar ${current + 1} dari ${slides.length} — ${root.getAttribute('aria-label')}`;
     // muat gambar tetangga lebih awal supaya geser terasa mulus
-    [current + 1, current - 1].forEach(k => {
+    if (preload) [current + 1, current - 1].forEach(k => {
       const img = slides[(k + slides.length) % slides.length].querySelector("img");
       if (img) img.loading = "eager";
     });
   };
+  go(0, false);
 
   root.querySelector(".gallery-prev").addEventListener("click", () => go(current - 1));
   root.querySelector(".gallery-next").addEventListener("click", () => go(current + 1));
   dots.forEach(d => d.addEventListener("click", () => go(+d.dataset.index)));
 
   root.addEventListener("keydown", e => {
-    if (e.key === "ArrowLeft") { go(current - 1); e.preventDefault(); }
-    if (e.key === "ArrowRight") { go(current + 1); e.preventDefault(); }
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    let next;
+    if (e.key === "ArrowLeft") next = current - 1;
+    else if (e.key === "ArrowRight") next = current + 1;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = slides.length - 1;
+    else return;
+    go(next);
+    if (e.target.closest('.gallery-dot')) dots[current]?.focus();
+    e.preventDefault();
   });
 
   // Geser jari / mouse (swipe)
-  const stage = root.querySelector(".gallery-stage");
   let startX = null, startY = 0;
   stage.addEventListener("pointerdown", e => {
     if (e.target.closest(".gallery-nav")) return;
@@ -374,7 +412,10 @@ function initSizeSwitch(el, startProduct) {
 
   const swapGalleryIfNeeded = (prev, next) => {
     const a = galleryImages(prev).join("|"), b = galleryImages(next).join("|");
-    if (a === b) return;                       // galeri sama → tidak diubah sama sekali (tidak berkedip)
+    if (a === b) {
+      updateGalleryProduct(el.querySelector('[data-gallery]'), next);
+      return; // Pertahankan gambar aktif, tetapi perbarui alt dan label varian.
+    }
     const slot = el.querySelector("[data-gallery-slot]");
     slot.innerHTML = galleryHTML(next);
     slot.firstElementChild.classList.add("gallery-enter");

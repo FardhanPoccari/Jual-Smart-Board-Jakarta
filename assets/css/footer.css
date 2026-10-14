@@ -14,7 +14,9 @@
   gap: 32px;
 }
 
-.footer h4 {
+.footer h2 {
+  font-size: 1em;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
