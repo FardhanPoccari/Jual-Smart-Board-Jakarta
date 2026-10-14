@@ -204,17 +204,17 @@
 }
 
 /* Navigasi dasar tetap dapat dipakai sebelum/tanpa inisialisasi JavaScript. */
-.navbar:not([data-navbar-ready="true"]) {
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) {
   position: relative;
   height: auto;
 }
-.navbar:not([data-navbar-ready="true"]) .container {
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) .container {
   flex-wrap: wrap;
   gap: 16px;
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.navbar:not([data-navbar-ready="true"]) .nav-links {
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) .nav-links {
   position: static;
   display: flex;
   flex-direction: row;
@@ -223,11 +223,11 @@
   padding: 0;
   box-shadow: none;
 }
-.navbar:not([data-navbar-ready="true"]) .hamburger,
-.navbar:not([data-navbar-ready="true"]) .nav-dropdown-toggle {
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) .hamburger,
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) .nav-dropdown-toggle {
   display: none;
 }
-.navbar:not([data-navbar-ready="true"]) .nav-dropdown-menu {
+html:not(.nav-pending) .navbar:not([data-navbar-ready="true"]) .nav-dropdown-menu {
   position: static;
   display: flex;
   flex-wrap: wrap;

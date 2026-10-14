@@ -1,3 +1,4 @@
+const PORTFOLIO_BASE = document.body.dataset.base || "";
 /* Foto produk dan ilustrasi penempatan; foto ruangan bukan dokumentasi pelanggan.
    imagePath memakai aset ruangan yang juga digunakan di Beranda. */
 const PORTFOLIO = [
@@ -21,7 +22,7 @@ function renderPortfolio(el) {
   const makeCard = p => `
     <article class="portfolio-item fade-up" data-category="${p.category}">
       <button type="button" class="portfolio-image ${p.category === 'ruang' ? 'is-room' : 'is-product'}" data-portfolio-preview aria-label="Perbesar gambar ${p.title}">
-        <img src="${BASE}${p.imagePath || `assets/images/portfolio/${p.image}`}" alt="${p.alt}" width="760" height="520" loading="lazy" decoding="async" />
+        <img src="${PORTFOLIO_BASE}${p.imagePath || `assets/images/portfolio/${p.image}`}" alt="${p.alt}" width="760" height="520" loading="lazy" decoding="async" />
         <span class="portfolio-image-arrow" aria-hidden="true">↗</span>
       </button>
       <div class="portfolio-meta"><span>${p.label}</span><span aria-hidden="true">/</span><span>Smart Board</span></div>

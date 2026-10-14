@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@font-face{font-family:Inter;font-style:normal;font-weight:400 900;font-display:swap;src:url("../fonts/inter-latin-variable.woff2") format("woff2");}
 /* ==========================================================
    GLOBAL — variabel, reset, layout dasar, tombol, animasi
    ========================================================== */
@@ -187,4 +187,20 @@ ul {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ---------- Animasi muncul saat halaman dibuka ---------- */
+.intro {
+  opacity: 1;
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.intro.reveal-ready {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.intro.in {
+  opacity: 1;
+  transform: none;
 }

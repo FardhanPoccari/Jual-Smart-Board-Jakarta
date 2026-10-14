@@ -1,4 +1,4 @@
-# Jual Smart Board Jakarta — Revisi 14 + P1/P2 dalam review
+# Jual Smart Board Jakarta — Revisi 14 + P1/P2/P3 dalam review
 
 Website HTML, CSS, dan JavaScript yang siap digunakan di GitHub Pages. Semua halaman, gambar, dan fitur sudah terintegrasi; tidak memerlukan backend atau build npm.
 
@@ -6,8 +6,9 @@ Website HTML, CSS, dan JavaScript yang siap digunakan di GitHub Pages. Semua hal
 
 - Baseline `main`: commit `840e2de` (Revisi 14), berhasil dideploy pada 13 Oktober 2026 melalui [Pages run #10](https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta/actions/runs/38365022641).
 - P1: commit `b0e7245`; P2: commit terpisah sesudahnya pada branch `revisi-1/perbaikan-p1`.
-- Perubahan P1/P2 ditinjau di [Draft PR #1](https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta/pull/1). Branch revisi belum di-merge atau dideploy.
-- Cakupan, pengujian, dan batasan revisi tersedia di [docs/REVISI-1-2.md](docs/REVISI-1-2.md).
+- Perubahan P1/P2/P3 ditinjau di [Draft PR #1](https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta/pull/1). Branch revisi belum di-merge atau dideploy. P3 menggunakan baseline `ff7e112` dan disimpan sebagai commit berikutnya.
+- Metrik Lighthouse sebelum/sesudah dan catatan P3 tersedia di [docs/REVISI-3.md](docs/REVISI-3.md).
+- Cakupan, pengujian, dan batasan P1/P2 tersedia di [docs/REVISI-1-2.md](docs/REVISI-1-2.md).
 
 ## Menjalankan website
 

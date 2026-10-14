@@ -2,7 +2,9 @@
 
 <html lang="id">
 <head>
+<script>document.documentElement.classList.add("nav-pending");window.addEventListener("load",()=>document.documentElement.classList.remove("nav-pending"));</script>
 <meta charset="utf-8"/>
+<link rel="preload" href="assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Jual Smart Board Jakarta | Smart Board &amp; Interactive Flat Panel</title>
 <meta content="Jual Smart Board dan interactive flat panel 65, 75, 86 inch untuk sekolah, kantor, dan instansi di Jakarta. Garansi, instalasi, dan konsultasi gratis." name="description"/>
@@ -81,7 +83,7 @@
 <div class="grid brand-product-grid">
 <article class="card brand-product-card fade-up">
 <div class="brand-product-image">
-<img alt="Smart Board Hikvision" loading="lazy" src="assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp"/>
+<img alt="Smart Board Hikvision" loading="lazy" src="assets/images/products/hikvision/Hikvision DS-D5C65RB-A.webp" width="1200" height="1200"/>
 </div>
 <div class="card-body">
 <h3>Smart Board Hikvision</h3>
@@ -91,7 +93,7 @@
 </article>
 <article class="card brand-product-card fade-up">
 <div class="brand-product-image">
-<img alt="Smart Board Zelt" loading="lazy" src="assets/images/products/zelt/zelt-pro Lurus.webp"/>
+<img alt="Smart Board Zelt" loading="lazy" src="assets/images/products/zelt/zelt-pro Lurus.webp" width="1920" height="1080"/>
 </div>
 <div class="card-body">
 <h3>Smart Board Zelt</h3>
@@ -101,7 +103,7 @@
 </article>
 <article class="card brand-product-card fade-up">
 <div class="brand-product-image">
-<img alt="Smart Board Samsung" loading="lazy" src="assets/images/products/samsung/Samsung Flip WM55B Lurus.webp"/>
+<img alt="Smart Board Samsung" loading="lazy" src="assets/images/products/samsung/Samsung Flip WM55B Lurus.webp" width="500" height="500"/>
 </div>
 <div class="card-body">
 <h3>Smart Board Samsung</h3>
@@ -126,10 +128,10 @@
 <div class="usecases-layout">
 <figure class="usecase-visual fade-left" id="usecase-visual">
 <img alt="Guru menjelaskan materi menggunakan Smart Board di ruang kelas" aria-hidden="false" class="usecase-image active" data-usecase-image="0" decoding="async" height="1060" loading="lazy" src="assets/images/optimized/ruang-kelas.webp" width="1484"/>
-<img alt="Tim kantor membahas laporan dan menulis di Smart Board dalam ruang rapat" aria-hidden="true" class="usecase-image" data-usecase-image="1" decoding="async" height="1060" loading="lazy" src="assets/images/optimized/ruang-rapat.webp" width="1484"/>
-<img alt="Instruktur memberikan pelatihan interaktif menggunakan Smart Board" aria-hidden="true" class="usecase-image" data-usecase-image="2" decoding="async" height="1060" loading="lazy" src="assets/images/optimized/ruang-pelatihan.webp" width="1484"/>
-<img alt="Guru mendemonstrasikan aplikasi di Smart Board dalam laboratorium komputer" aria-hidden="true" class="usecase-image" data-usecase-image="3" decoding="async" height="1060" loading="lazy" src="assets/images/optimized/laboratorium-komputer.webp" width="1484"/>
-<img alt="Guru dan siswa merancang proyek aplikasi di Smart Board dalam bengkel RPL" aria-hidden="true" class="usecase-image" data-usecase-image="4" decoding="async" height="1060" loading="lazy" src="assets/images/optimized/bengkel-rpl.webp" width="1484"/>
+<img alt="Tim kantor membahas laporan dan menulis di Smart Board dalam ruang rapat" aria-hidden="true" class="usecase-image" data-usecase-image="1" decoding="async" height="1060" loading="lazy" data-src="assets/images/optimized/ruang-rapat.webp" width="1484"/>
+<img alt="Instruktur memberikan pelatihan interaktif menggunakan Smart Board" aria-hidden="true" class="usecase-image" data-usecase-image="2" decoding="async" height="1060" loading="lazy" data-src="assets/images/optimized/ruang-pelatihan.webp" width="1484"/>
+<img alt="Guru mendemonstrasikan aplikasi di Smart Board dalam laboratorium komputer" aria-hidden="true" class="usecase-image" data-usecase-image="3" decoding="async" height="1060" loading="lazy" data-src="assets/images/optimized/laboratorium-komputer.webp" width="1484"/>
+<img alt="Guru dan siswa merancang proyek aplikasi di Smart Board dalam bengkel RPL" aria-hidden="true" class="usecase-image" data-usecase-image="4" decoding="async" height="1060" loading="lazy" data-src="assets/images/optimized/bengkel-rpl.webp" width="1484"/>
 <figcaption aria-atomic="true" aria-live="polite" class="usecase-caption">
 <span data-usecase-title="">Ruang Kelas</span>
 <span class="usecase-counter" data-usecase-counter="">01 / 05</span>
@@ -327,16 +329,15 @@
 </div>
 </footer>
 <button aria-label="Kembali ke atas" id="back-to-top">↑</button>
-<!-- Script (urutan penting: products.js harus paling awal, main.js paling akhir) -->
-<script src="assets/js/nav-history.js"></script>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/usecases.js?v=5-ruangan"></script>
-<script src="assets/js/hero-slider.js"></script>
-<script src="assets/js/navbar.js"></script>
-<script src="assets/js/animation.js"></script>
-<script src="assets/js/modal.js"></script>
-<script src="assets/js/faq.js?v=11"></script>
-<script src="assets/js/back-to-top.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- Script defer mengikuti urutan dependensi; modul hanya untuk fitur halaman ini. -->
+<script defer src="assets/js/nav-history.js"></script>
+<script defer src="assets/js/usecases.js?v=5-ruangan"></script>
+<script defer src="assets/js/hero-slider.js"></script>
+<script defer src="assets/js/navbar.js"></script>
+<script defer src="assets/js/animation.js"></script>
+<script defer src="assets/js/modal.js"></script>
+<script defer src="assets/js/faq.js?v=11"></script>
+<script defer src="assets/js/back-to-top.js"></script>
+<script defer src="assets/js/main.js"></script>
 </body>
 </html>

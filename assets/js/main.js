@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (detail) renderDetail(detail);
   const cf = document.getElementById("contact-form");
   if (cf) initContact(cf);
-  initHeroSlider();
+  if (typeof initHeroSlider === "function") initHeroSlider();
   if (typeof initUsecases === "function") initUsecases();
   initNavbar(); initBackToTop();
-  if (document.getElementById("modal")) initModal();
-  if (document.querySelector(".faq")) initFaq();
-  initAnimation();
+  if (document.getElementById("modal") && typeof initModal === "function") initModal();
+  if (document.querySelector(".faq") && typeof initFaq === "function") initFaq();
+  if (typeof initAnimation === "function") initAnimation();
 });
