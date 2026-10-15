@@ -4,6 +4,7 @@ function initFaq() {
     const answer = q.nextElementSibling;
     if (!answer || q.dataset.faqReady === "true") return;
     q.dataset.faqReady = "true";
+    q.setAttribute("aria-expanded", "false");
     q.type = "button";
     q.id = q.id || `faq-question-${index + 1}`;
     answer.id = answer.id || `faq-answer-${index + 1}`;

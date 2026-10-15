@@ -1,6 +1,14 @@
-# Jual Smart Board Jakarta — Revisi 14
+# Jual Smart Board Jakarta — Revisi 14 + P1/P2/P3 dalam review
 
 Website HTML, CSS, dan JavaScript yang siap digunakan di GitHub Pages. Semua halaman, gambar, dan fitur sudah terintegrasi; tidak memerlukan backend atau build npm.
+
+## Status revisi
+
+- Baseline `main`: commit `840e2de` (Revisi 14), berhasil dideploy pada 13 Oktober 2026 melalui [Pages run #10](https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta/actions/runs/38365022641).
+- P1: commit `b0e7245`; P2: commit terpisah sesudahnya pada branch `revisi-1/perbaikan-p1`.
+- Perubahan P1/P2/P3 ditinjau di [Draft PR #1](https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta/pull/1). Branch revisi belum di-merge atau dideploy. P3 menggunakan baseline `ff7e112` dan disimpan sebagai commit berikutnya.
+- Metrik Lighthouse sebelum/sesudah dan catatan P3 tersedia di [docs/REVISI-3.md](docs/REVISI-3.md).
+- Cakupan, pengujian, dan batasan P1/P2 tersedia di [docs/REVISI-1-2.md](docs/REVISI-1-2.md).
 
 ## Menjalankan website
 
@@ -20,34 +28,22 @@ Website HTML, CSS, dan JavaScript yang siap digunakan di GitHub Pages. Semua hal
 - Animasi pada Solusi, FAQ, dan Kontak dibatasi di dalam section agar tidak menimbulkan scroll horizontal saat elemen belum terlihat.
 - Panduan SEO disesuaikan untuk GitHub Pages project site.
 
-## Memperbarui repository GitHub
+## Melanjutkan pengerjaan melalui branch revisi
 
-Gunakan folder hasil `git clone`, karena folder hasil ekstrak ZIP biasanya tidak memiliki metadata Git.
-
-Jika belum mempunyai folder clone, jalankan di PowerShell:
+Gunakan clone repository dan branch revisi; jangan menyalin ZIP menimpa seluruh repository tanpa membandingkan isinya.
 
 ```powershell
-cd "C:\Users\T440\Downloads"
-git clone https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta.git jual-smartboard-github-revisi14
-cd "C:\Users\T440\Downloads\jual-smartboard-github-revisi14"
+git clone https://github.com/FardhanPoccari/Jual-Smart-Board-Jakarta.git
+cd Jual-Smart-Board-Jakarta
+git fetch origin
+git switch revisi-1/perbaikan-p1
 ```
 
-Salin **seluruh isi ZIP** ke folder clone tersebut: `index.html`, `pages/`, `assets/`, serta file pendukung. Pilih Replace untuk file dengan nama sama. Pertahankan folder `.git` di dalam folder clone. Jika memakai clone yang sudah ada, masuk ke folder clone itu.
-
-Sesudah file disalin:
-
-```powershell
-git status
-git add .
-git commit -m "Perbaiki katalog, spesifikasi, dan portofolio Revisi 14"
-git push origin main
-```
-
-Jika `git status` menunjukkan `working tree clean`, periksa bahwa file baru benar-benar disalin ke folder clone yang sedang aktif. Setelah push, tunggu proses GitHub Actions/Pages selesai dan lakukan refresh dengan Ctrl+F5.
+Periksa `git status` dan lakukan pengujian sebelum menyimpan perubahan. Push hanya ke branch revisi yang telah disetujui. Push/merge ke `main` dapat memicu publikasi Pages; merge dan deployment memerlukan persetujuan terpisah.
 
 ## URL publik dan SEO
 
-URL dasar: `https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/`. URL ini telah merespons HTTP 200 pada pemeriksaan 13 Oktober 2026. Pemeriksaan ini memastikan alamat hosting dapat diakses; ZIP Revisi 14 belum dipublikasikan otomatis.
+URL dasar: `https://fardhanpoccari.github.io/Jual-Smart-Board-Jakarta/`. Log Pages membuktikan deployment baseline Revisi 14 berhasil. Hal itu tidak menggantikan pengujian HTTP/tampilan publik; audit revisi menggunakan Chromium lokal karena akses publik terbatas.
 
 - Canonical, Open Graph, dan sitemap mempertahankan URL project tersebut.
 - `sitemap.xml` mencakup 43 halaman publik. Detail lama `product-detail.html?id=...` tetap memakai `noindex,follow` untuk menghindari duplikasi.
@@ -64,4 +60,4 @@ Referensi: https://developers.google.com/crawling/docs/robots-txt/robots-txt-spe
 
 Beberapa ukuran memakai foto seri yang sama. Spesifikasi numerik yang belum dapat dikaitkan dengan varian unit tidak ditambahkan. Katalog ZELT, termasuk Pro 85 inch, dipertahankan; ukuran, versi OS, RAM, penyimpanan, kompatibilitas aksesoris, isi paket, serta ketersediaan perlu dicocokkan dengan datasheet unit sebelum transaksi.
 
-Ringkasan file yang berubah, sumber data, hasil pengujian, dan keterbatasan tersedia di `LAPORAN-REVISI-14.md`. Laporan Revisi 12/13 disimpan sebagai riwayat perubahan; gunakan laporan Revisi 14 untuk status terkini.
+Laporan Revisi 12/13/14 tidak tersedia dalam baseline repository; dokumentasi ini tidak mengklaim telah memulihkannya. Riwayat dapat diperiksa melalui commit GitHub. Gunakan [docs/REVISI-1-2.md](docs/REVISI-1-2.md) untuk catatan P1/P2 yang benar-benar tersedia.

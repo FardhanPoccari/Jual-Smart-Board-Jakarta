@@ -5,6 +5,7 @@
 
 .hero {
   position: relative;
+  width: 100%;
   /* Angka kedua = tinggi. Makin besar, hero makin tinggi.
      650 → 720 (lebih tinggi sedikit). Coba 780 kalau masih kurang. */
   aspect-ratio: 1580 / 720;
@@ -126,18 +127,6 @@
 .hero-dot.active {
   background: #fff;
   transform: scale(1.2);
-}
-
-/* ---------- Animasi muncul saat halaman dibuka ---------- */
-.intro {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-
-.intro.in {
-  opacity: 1;
-  transform: none;
 }
 
 /* ---------- Responsif ---------- */

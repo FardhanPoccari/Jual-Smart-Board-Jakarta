@@ -31,6 +31,7 @@ function initUsecases() {
       });
       images.forEach((image) => {
         const active = Number(image.dataset.usecaseImage) === selected;
+        if (active && image.dataset.src && !image.getAttribute('src')) image.src = image.dataset.src;
         image.classList.toggle("active", active);
         image.setAttribute("aria-hidden", String(!active));
       });

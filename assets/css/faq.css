@@ -50,9 +50,12 @@
 }
 
 .faq-a {
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
+}
+
+.faq-q[data-faq-ready="true"] + .faq-a {
+  max-height: 0;
 }
 
 .faq-a p {
