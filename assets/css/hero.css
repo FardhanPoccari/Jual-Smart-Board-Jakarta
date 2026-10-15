@@ -5,6 +5,7 @@
 
 .hero {
   position: relative;
+  width: 100%;
   /* Angka kedua = tinggi. Makin besar, hero makin tinggi.
      650 → 720 (lebih tinggi sedikit). Coba 780 kalau masih kurang. */
   aspect-ratio: 1580 / 720;
