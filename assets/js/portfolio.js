@@ -15,7 +15,8 @@ const PORTFOLIO = [
   {title:"Detail Display Hikvision", category:"detail", label:"Detail Fitur", image:"detail-hikvision.webp", desc:"Detail tampilan panel Hikvision yang bisa menjadi referensi saat memilih produk.", alt:"Detail panel Smart Board Hikvision", href:"produk-hikvision.html"},
   {title:"Fitur Whiteboard Samsung Flip", category:"detail", label:"Detail Fitur", image:"detail-samsung-flip.webp", desc:"Contoh visual penggunaan papan tulis digital untuk menuliskan dan berbagi ide.", alt:"Contoh tulisan dan anotasi pada Samsung Flip", href:"produk-samsung.html"},
   {title:"Tampilan Samsung WAD Series", category:"detail", label:"Detail Fitur", image:"detail-samsung-wad.webp", desc:"Melihat lebih dekat antarmuka display interaktif Samsung seri WAD.", alt:"Tampilan depan interactive display Samsung WAD", href:"produk-samsung.html"},
-  {title:"Mobile Stand Hikvision", category:"detail", label:"Aksesoris", image:"mobile-stand.webp", desc:"Dudukan beroda untuk membantu penempatan panel pada berbagai kebutuhan ruangan.", alt:"Foto produk dudukan beroda Smart Board Hikvision", href:"produk-hikvision.html"}
+  {title:"Mobile Stand Hikvision", category:"detail", label:"Aksesoris", image:"mobile-stand.webp", desc:"Dudukan beroda untuk membantu penempatan panel pada berbagai kebutuhan ruangan.", alt:"Foto produk dudukan beroda Smart Board Hikvision", href:"produk-hikvision.html"},
+  {title:"Mobile Stand Samsung", category:"detail", label:"Aksesoris", imagePath:"assets/images/products/samsung/Mobile Stand Samsung.webp", desc:"Stand mobile beroda untuk memudahkan pemindahan Smart Board Samsung antar ruangan.", alt:"Foto produk dudukan beroda Mobile Stand Samsung", href:"produk-samsung-mobile-stand.html"}
 ];
 
 function renderPortfolio(el) {
