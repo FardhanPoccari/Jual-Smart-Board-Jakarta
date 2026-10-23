@@ -1,4 +1,4 @@
-/* Kontak ringkas: WA, email, area layanan dan Google Maps. */
+/* Kontak ringkas: WA, area layanan dan Google Maps. */
 .contact-page-hero p { max-width:610px; }
 .contact-location-section { padding-top:58px; padding-bottom:100px; overflow-x:clip; }
 .contact-location-layout { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:start; gap:64px; }

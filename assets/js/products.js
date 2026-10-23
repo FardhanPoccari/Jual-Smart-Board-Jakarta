@@ -232,7 +232,7 @@ function updateGalleryProduct(root, p) {
 function renderProducts(el) {
   el.innerHTML = PRODUCTS.filter(p => ["Smart Board", "Interactive Flat Panel"].includes(p.type)).map(p => `
     <article class="card fade-up">
-      <img src="${imgSrc(p)}" alt="${p.name}" width="400" height="280" loading="lazy" ${imgFallback}>
+      <div class="product-card-visual"><img src="${imgSrc(p)}" alt="${p.name}" width="400" height="280" loading="lazy" ${imgFallback}></div>
       <div class="card-body"><span class="badge">${p.badge}</span><h3>${p.name}</h3><p>${p.desc}</p>
       <a class="btn btn-outline" href="${BASE}pages/product-detail.html?id=${p.id}">Lihat Detail</a></div>
     </article>`).join("");
